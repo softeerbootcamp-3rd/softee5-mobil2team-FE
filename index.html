@@ -7,5 +7,50 @@
   </head>
   <body>
     <div id="app"></div>
+    <script>
+      const fetchTestData = async () => {
+        const apiUrl = "http://13.209.90.251/test";
+        fetch(apiUrl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("데이터:", data);
+          })
+          .catch((error) => {
+            console.error("오류 발생:", error);
+          });
+      };
+
+      const postTestData = async () => {
+        const apiUrl = "http://13.209.90.251/test";
+        fetch(apiUrl, { method: "POST" })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("데이터:", data);
+          })
+          .catch((error) => {
+            console.error("오류 발생:", error);
+          });
+      };
+
+      const fetchButton = document.createElement("button");
+      fetchButton.textContent = "데이터 가져오기";
+      fetchButton.addEventListener("click", fetchTestData);
+      document.body.appendChild(fetchButton);
+
+      const postButton = document.createElement("button");
+      postButton.textContent = "데이터 전송하기";
+      postButton.addEventListener("click", postTestData);
+      document.body.appendChild(postButton);
+    </script>
   </body>
 </html>
