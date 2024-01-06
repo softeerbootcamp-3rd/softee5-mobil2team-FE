@@ -1,2 +1,241 @@
 @import "./reset.scss";
 @import "./variables.scss";
+
+html {
+  background-color: $gray_900;
+}
+
+.wagle {
+  min-width: 375px;
+  max-width: 480px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.wagle__header {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.wagle__header__station {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  .wagle__header__station__btn {
+    @extend %B_16;
+    color: $gray_500;
+    width: max-content;
+    height: max-content;
+  }
+  .wagle__header__station__title {
+    @extend %B_18;
+    color: $gray_50;
+    width: max-content;
+    height: 40px;
+    display: inline-flex;
+    padding: 0px 14px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 40px;
+    border: 2px solid $green_500;
+  }
+}
+
+.wagle__header__tag-list {
+  @extend %scroll;
+  width: 100%;
+  height: 36px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  overflow-x: scroll;
+
+  .wagle__header__tag {
+    width: max-content;
+    height: 36px;
+    padding: 0 10px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background-color: $gray_800;
+    color: $gray_100;
+    .wagle__header__tag__img {
+      width: 18px;
+    }
+    .wagle__header__tag__text {
+      @extend %M_14;
+    }
+  }
+  .all-tag {
+    @extend %SB_14;
+    color: $gray_200;
+    justify-content: center;
+    align-items: center;
+  }
+  .selected-tag {
+    color: $green_600;
+  }
+}
+
+.wagle__main--empty {
+  width: 100%;
+  height: calc(100% - 130px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 21px;
+
+  .main__icon--empty {
+    width: 120px;
+    height: 120px;
+  }
+  .main__text--empty {
+    @extend %M_16;
+    color: $gray_700;
+  }
+}
+
+.wagle__main {
+  @extend %scroll;
+  width: 100%;
+  height: calc(100% - 130px);
+  overflow-y: scroll;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 19px;
+}
+
+.wagle__main__card {
+  width: 100%;
+  height: max-content;
+  min-height: 465px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background-color: $gray_800;
+}
+
+.card__header {
+  width: 100%;
+  height: 66px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding-left: 16px;
+
+  .card__header__img-wrapper {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1px solid $gray_600;
+    background-color: $gray_700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .card__header__info {
+    width: max-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    .card__header__info__title {
+      @extend %SB_14;
+      color: $gray_300;
+    }
+
+    .card__header__info__time {
+      @extend %R_12;
+      color: $gray_500;
+    }
+  }
+}
+
+.card__content {
+  width: 100%;
+  height: max-content;
+}
+
+.card__content__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.card__content--only-text {
+  @extend %SB_18;
+  color: $gray_50;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: $gray_700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__content--both {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+
+  .card__content__text {
+    @extend %R_14;
+    color: $gray_100;
+    padding: 0 12px;
+  }
+}
+
+.card__footer {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding-left: 16px;
+
+  .card__footer__like-img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .card__footer__like-count {
+    @extend %M_14;
+    color: $gray_300;
+  }
+}

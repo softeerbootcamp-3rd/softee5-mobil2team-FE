@@ -4,16 +4,174 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./SCSS/style.scss" />
-    <title>Vite App</title>
+    <title>👨‍👩‍👧‍👦 와글와글 👩‍👩‍👦‍👦</title>
   </head>
   <body>
-    <header>
+    <!-- <header>
       <a data-navigo href="/">Go To Index</a>
       <a data-navigo href="/station/1">Go To Detail With Id 1</a>
       <a data-navigo href="/station/2">Go To Detail With Id 2</a>
       <a data-navigo href="/dummy">Dummy Page</a>
-    </header>
-    <main></main>
+    </header> -->
+    <div id="app">
+      <template>
+        <div class="wagle">
+          <header class="wagle__header">
+            <menu class="wagle__header__station">
+              <button class="wagle__header__station__btn">서초역</button>
+              <div class="wagle__header__station__title">
+                <svg
+                  class="circle"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                >
+                  <circle cx="6" cy="6" r="6" fill="#00DFA9" />
+                </svg>
+                <h3 class="wagle__header__station__title__text">교대역</h3>
+              </div>
+              <button class="wagle__header__station__btn">강남역</button>
+            </menu>
+            <ul class="wagle__header__tag-list">
+              <li class="wagle__header__tag all-tag">전체</li>
+              <li class="wagle__header__tag">
+                <img
+                  class="wagle__header__tag__img"
+                  alt="tag-img"
+                  src="./assets/tag_img.svg"
+                />
+                <span class="wagle__header__tag__text">출근러의 비명</span>
+              </li>
+              <li class="wagle__header__tag">
+                <img
+                  class="wagle__header__tag__img"
+                  src="./assets/tag_img.svg"
+                />
+                <span class="wagle__header__tag__text">출근러의 비명</span>
+              </li>
+              <li class="wagle__header__tag">
+                <img
+                  class="wagle__header__tag__img"
+                  src="./assets/tag_img.svg"
+                />
+                <span class="wagle__header__tag__text">출근러의 비명</span>
+              </li>
+              <li class="wagle__header__tag">
+                <img
+                  class="wagle__header__tag__img"
+                  src="./assets/tag_img.svg"
+                />
+                <span class="wagle__header__tag__text">출근러의 비명</span>
+              </li>
+              <li class="wagle__header__tag">
+                <img
+                  class="wagle__header__tag__img"
+                  src="./assets/tag_img.svg"
+                />
+                <span class="wagle__header__tag__text">출근러의 비명</span>
+              </li>
+            </ul>
+          </header>
+
+          <main class="wagle__main">
+            <section class="wagle__main__card">
+              <header class="card__header">
+                <div class="card__header__img-wrapper">
+                  <img src="./assets/tag_img.svg" alt="card-profile" />
+                </div>
+                <div class="card__header__info">
+                  <h4 class="card__header__info__title">비명지르는 회사원1</h4>
+                  <span class="card__header__info__time">12:30 작성됨</span>
+                </div>
+              </header>
+
+              <article class="card__content">
+                <div class="card__content--only-text">아, 배고파😂</div>
+              </article>
+
+              <footer class="card__footer">
+                <img
+                  src="./assets/heart_img.svg"
+                  alt="like"
+                  class="card__footer__like-img"
+                />
+                <span class="card__footer__like-count">99+</span>
+              </footer>
+            </section>
+            <section class="wagle__main__card">
+              <header class="card__header">
+                <div class="card__header__img-wrapper">
+                  <img src="./assets/tag_img.svg" alt="card-profile" />
+                </div>
+                <div class="card__header__info">
+                  <h4 class="card__header__info__title">비명지르는 회사원1</h4>
+                  <span class="card__header__info__time">12:30 작성됨</span>
+                </div>
+              </header>
+
+              <article class="card__content">
+                <div class="card__content--both">
+                  <img
+                    src="./assets/card_img.svg"
+                    alt="card-content"
+                    class="card__content__img"
+                  />
+                  <p class="card__content__text">
+                    꺄아아아아아아아아아아ㅏ아아아아아아아아아ㅏㅏㅏㅏㅏㅏㅏ아아아아ㅏ아아아아아아아ㅏㅇ아아아아아ㅏㅇ아ㅏㅇ아ㅏㅇ아ㅏ아아아아아앙꺄아아아아아아아아아아꺄아아아아아아아아아아꺄아아아아아아아아아아아아아아
+                  </p>
+                </div>
+              </article>
+
+              <footer class="card__footer">
+                <img
+                  src="./assets/heart_img.svg"
+                  alt="like"
+                  class="card__footer__like-img"
+                />
+                <span class="card__footer__like-count">99+</span>
+              </footer>
+            </section>
+            <section class="wagle__main__card">
+              <header class="card__header">
+                <div class="card__header__img-wrapper">
+                  <img src="./assets/tag_img.svg" alt="card-profile" />
+                </div>
+                <div class="card__header__info">
+                  <h4 class="card__header__info__title">비명지르는 회사원1</h4>
+                  <span class="card__header__info__time">12:30 작성됨</span>
+                </div>
+              </header>
+
+              <article class="card__content">
+                <img
+                  src="./assets/card_img.svg"
+                  alt="card-content"
+                  class="card__content__img"
+                />
+              </article>
+
+              <footer class="card__footer">
+                <img
+                  src="./assets/heart_img.svg"
+                  alt="like"
+                  class="card__footer__like-img"
+                />
+                <span class="card__footer__like-count">99+</span>
+              </footer>
+            </section>
+          </main>
+
+          <template>
+            <main class="wagle__main--empty">
+              <img class="main__icon--empty" src="./assets/empty_img.svg" />
+              <p class="main__text--empty">나의 지하철 소식을 공유해보세요!</p>
+            </main>
+          </template>
+        </div>
+      </template>
+    </div>
     <script type="module" src="index.js"></script>
   </body>
 </html>

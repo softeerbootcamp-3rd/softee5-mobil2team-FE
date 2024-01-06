@@ -10,8 +10,8 @@ const router = createRouter();
 router
   .addRoute("/", pages.home)
   .addRoute("/station/:id", pages.detail)
-  .setNotFound(pages.notFound)
-  .start();
+  .setNotFound(pages.notFound);
+// .start();
 
 const NAV_BTN_SELECTOR = "button[data-navigate]";
 
