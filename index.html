@@ -34,7 +34,7 @@
               </div>
               <button class="wagle__header__station__btn">강남역</button>
             </menu>
-            <ul class="tag-list">
+            <ul class="wagle__header__tag-list">
               <li class="tag all-tag">전체</li>
               <li class="tag">
                 <img
@@ -164,6 +164,9 @@
       </template>
 
       <div class="upload">
+        <button class="upload__cancle-btn">
+          <img src="./assets/cancle_img.svg" alt="cancle" />
+        </button>
         <header class="upload__header">
           <menu class="station__title">
             <svg
@@ -179,8 +182,60 @@
             <h3 class="station__title__text">잠실나루역</h3>
             <img src="./assets/triangle_img.svg" alt="triangle" />
           </menu>
-          <h4 class="upload__header__text"></h4>
+          <h4 class="upload__header__text">에서 무슨 일이?</h4>
         </header>
+        <nav class="upload__tag-list">
+          <div class="tag">
+            <img class="tag__img" alt="tag-img" src="./assets/tag_img.svg" />
+            <span class="tag__text">출근자의 비명</span>
+          </div>
+          <div class="tag">
+            <img class="tag__img" src="./assets/tag_img.svg" />
+            <span class="tag__text">지각 확정</span>
+          </div>
+          <div class="tag">
+            <img class="tag__img" src="./assets/tag_img.svg" />
+            <span class="tag__text">지옥철SOS</span>
+          </div>
+          <div class="tag">
+            <img class="tag__img" src="./assets/tag_img.svg" />
+            <span class="tag__text">비상!</span>
+          </div>
+          <div class="tag">
+            <img class="tag__img" src="./assets/tag_img.svg" />
+            <span class="tag__text">칼퇴러의 환호</span>
+          </div>
+          <div class="tag">
+            <img class="tag__img" src="./assets/tag_img.svg" />
+            <span class="tag__text">야근러의 무덤</span>
+          </div>
+          <div class="tag">
+            <img class="tag__img" src="./assets/tag_img.svg" />
+            <span class="tag__text">야작러의 눈물</span>
+          </div>
+          <div class="tag">
+            <img class="tag__img" src="./assets/tag_img.svg" />
+            <span class="tag__text">날씨 요정</span>
+          </div>
+          <div class="tag">
+            <img class="tag__img" src="./assets/tag_img.svg" />
+            <span class="tag__text">맛집 뿌셔!</span>
+          </div>
+          <div class="tag">
+            <img class="tag__img" src="./assets/tag_img.svg" />
+            <span class="tag__text">교수님 우리 절교해요</span>
+          </div>
+          <div class="tag">
+            <img class="tag__img" src="./assets/tag_img.svg" />
+            <span class="tag__text">가벼운 발걸음 총총</span>
+          </div>
+        </nav>
+        <textarea
+          class="upload__textarea"
+          placeholder="지금 지하철에서 어떤 일이 일어나고 있나요?
+ex) 오늘 출근 지옥이다..."
+        ></textarea>
+        <span class="upload__text-count">0/100</span>
       </div>
     </div>
     <script type="module" src="index.js"></script>
