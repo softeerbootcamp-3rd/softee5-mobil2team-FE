@@ -1,3 +1,5 @@
+import { TagView } from "./TagView.js";
+
 export const WagleTagListView = (tagList) => {
   return `
     <ul class="wagle__header__tag-list">
