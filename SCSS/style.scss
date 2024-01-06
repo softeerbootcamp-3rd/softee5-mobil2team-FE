@@ -10,6 +10,7 @@ html {
   height: 100vh;
   margin: 0 auto;
   padding: 0 16px;
+
   border: 1px solid skyblue;
 
   display: flex;
@@ -25,8 +26,6 @@ html {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-
-  border: 1px solid skyblue;
 }
 
 .wagle__header__station {
@@ -98,5 +97,25 @@ html {
   }
   .selected-tag {
     color: $green_600;
+  }
+}
+
+.wagle__main--empty {
+  width: 100%;
+  height: calc(100% - 130px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 21px;
+  border: 1px solid skyblue;
+
+  .main__icon--empty {
+    width: 120px;
+    height: 120px;
+  }
+  .main__text--empty {
+    @extend %M_16;
+    color: $gray_700;
   }
 }
