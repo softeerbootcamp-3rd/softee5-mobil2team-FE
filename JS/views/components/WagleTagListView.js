@@ -1,6 +1,9 @@
 import { TagView } from "./TagView.js";
 
-export const WagleTagListView = (tagList) => {
+export const WagleTagListView = () => {
+  /**
+   * tagList를 서버에서 받아오기
+   */
   return `
     <ul class="wagle__header__tag-list">
         <li class="tag all-tag">전체</li>
