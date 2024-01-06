@@ -9,5 +9,52 @@ html {
   width: 375px;
   height: 100vh;
   margin: 0 auto;
+
   border: 1px solid skyblue;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.wagle__header {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  border: 1px solid skyblue;
+}
+
+.wagle__header__station {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  border: 1px solid skyblue;
+
+  .wagle__header__station__btn {
+    @extend %B_16;
+    color: $gray_500;
+    width: max-content;
+    height: max-content;
+  }
+  .wagle__header__station__title {
+    @extend %B_18;
+    color: $gray_50;
+    width: max-content;
+    height: 40px;
+    display: inline-flex;
+    padding: 0px 14px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 40px;
+    border: 2px solid $green_500;
+  }
 }
