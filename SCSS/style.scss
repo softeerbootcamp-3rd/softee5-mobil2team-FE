@@ -183,6 +183,41 @@ html {
 }
 
 .card__content {
+  width: 100%;
+  height: max-content;
+}
+
+.card__content__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.card__content--only-text {
+  @extend %SB_18;
+  color: $gray_50;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: $gray_700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__content--both {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+
+  .card__content__text {
+    @extend %R_14;
+    color: $gray_100;
+    padding: 0 12px;
+  }
 }
 
 .card__footer {
