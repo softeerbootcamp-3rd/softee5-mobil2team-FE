@@ -6,7 +6,8 @@ html {
 }
 
 .wagle {
-  width: 375px;
+  min-width: 375px;
+  max-width: 480px;
   height: 100vh;
   margin: 0 auto;
   padding: 0 16px;
@@ -117,6 +118,7 @@ html {
   width: 100%;
   height: calc(100% - 130px);
   overflow-y: scroll;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
