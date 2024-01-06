@@ -257,9 +257,11 @@ html {
 }
 
 .upload {
+  @extend %scroll;
   min-width: 375px;
   max-width: 480px;
   height: 100vh;
+  overflow-y: scroll;
   margin: 0 auto;
   padding: 0 16px;
   display: flex;
@@ -271,7 +273,7 @@ html {
     align-self: flex-end;
     width: 24px;
     height: 24px;
-    margin: 8px 16px;
+    margin: 10px 0;
   }
 }
 
@@ -283,6 +285,7 @@ html {
   align-items: center;
   margin: 27px 0;
   gap: 8px;
+  flex-shrink: 0;
 
   .upload__header__text {
     @extend %SB_18;
@@ -301,6 +304,7 @@ html {
   grid-auto-columns: max-content;
   gap: 8px;
   overflow-x: scroll;
+  flex-shrink: 0;
 }
 
 .upload__textarea {
@@ -334,4 +338,56 @@ html {
   width: 100%;
   text-align: right;
   margin-top: 10px;
+}
+
+.upload__photo-label {
+  width: 100%;
+  margin-top: 23px;
+}
+
+.upload__photo-list {
+  @extend %scroll;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  overflow-x: scroll;
+  margin-top: 10px;
+  flex-shrink: 0;
+  .upload__photo {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    img {
+      border-radius: 8px;
+    }
+  }
+  .focus {
+    border: 1px solid $green_700;
+  }
+}
+
+.upload__submit-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin: 48px 0;
+  background-color: $gray_700;
+  @extend %B_16;
+  color: $gray_800;
+}
+
+.upload__submit-btn--active {
+  background-color: $green_600;
+  color: $gray_900;
+  &:active {
+    background-color: $green_700;
+  }
 }
