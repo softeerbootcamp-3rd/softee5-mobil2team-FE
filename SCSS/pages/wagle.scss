@@ -1,0 +1,88 @@
+.wagle {
+  min-width: 375px;
+  max-width: 480px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.wagle__header {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.wagle__header__station {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  .wagle__header__station__btn {
+    @extend %B_16;
+    color: $gray_500;
+    width: max-content;
+    height: max-content;
+  }
+}
+.wagle__header__tag-list {
+  @extend %scroll;
+  width: 100%;
+  height: 36px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  overflow-x: scroll;
+}
+
+.wagle__main--empty {
+  width: 100%;
+  height: calc(100% - 130px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 21px;
+
+  .main__icon--empty {
+    width: 120px;
+    height: 120px;
+  }
+  .main__text--empty {
+    @extend %M_16;
+    color: $gray_700;
+  }
+}
+
+.wagle__main {
+  @extend %scroll;
+  width: 100%;
+  height: calc(100% - 130px);
+  overflow-y: scroll;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 19px;
+}
+
+.wagle__main__card {
+  width: 100%;
+  height: max-content;
+  min-height: 465px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background-color: $gray_800;
+}
