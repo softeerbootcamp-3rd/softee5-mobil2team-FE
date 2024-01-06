@@ -7,13 +7,38 @@
     <title>Vite App</title>
   </head>
   <body>
-    <header>
+    <!-- <header>
       <a data-navigo href="/">Go To Index</a>
       <a data-navigo href="/station/1">Go To Detail With Id 1</a>
       <a data-navigo href="/station/2">Go To Detail With Id 2</a>
       <a data-navigo href="/dummy">Dummy Page</a>
-    </header>
-    <main></main>
+    </header> -->
+    <div id="app">
+      <div class="wagle">
+        <header class="wagle__header">
+          <menu class="wagle__header__station">
+            <button class="wagle__header__station__btn">서초역</button>
+            <div class="wagle__header__station__title">
+              <svg
+                class="circle"
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+              >
+                <circle cx="6" cy="6" r="6" fill="#00DFA9" />
+              </svg>
+              <h4 class="wagle__header__station__title__text">교대역</h4>
+            </div>
+            <button class="wagle__header__station__btn">강남역</button>
+          </menu>
+          <ul class="wagle__header__tag-list">
+            <li class="wagle__header__tag all-tag">전체</li>
+          </ul>
+        </header>
+      </div>
+    </div>
     <script type="module" src="index.js"></script>
   </body>
 </html>
