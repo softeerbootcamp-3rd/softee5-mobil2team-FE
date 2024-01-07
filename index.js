@@ -14,12 +14,17 @@ router
   .setNotFound(pages.notFound)
   .start();
 
-const NAV_BTN_SELECTOR = "button[data-navigate]";
+/**
+ * 브라우저 기본 이동 동작을 막고 navigate로 페이지만 바꿈 -> pushstate로 url 변경
+ * data-navigate 속성을 안 주면 그냥 a태그로 이동하는 것과 같다는 것을 알 수 있다. -> 브라우저가 화면을 새로고침 함
+ */
+const NAV_A_SELECTOR = "a[data-navigate]";
 
-document.body.addEventListener("click", (e) => {
-  const { target } = e;
-  if (target.matches(NAV_BTN_SELECTOR)) {
-    const { navigate } = target.dataset;
-    router.navigate(navigate);
+document.body.addEventListener("click", (event) => {
+  const { target } = event;
+
+  if (target.matches(NAV_A_SELECTOR)) {
+    event.preventDefault();
+    router.navigate(target.href);
   }
 });
