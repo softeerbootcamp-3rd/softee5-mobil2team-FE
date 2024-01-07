@@ -6,7 +6,6 @@ export const WagleHeaderView = (stationId) => {
   const prevStationIdx =
     (currStationIdx - 1 + stationList.length) % stationList.length;
   const nextStationIdx = (currStationIdx + 1) % stationList.length;
-  console.log(prevStationIdx, currStationIdx, nextStationIdx);
   return `
 <header class="wagle__header">
   <menu class="wagle__header__station">
