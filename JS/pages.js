@@ -1,5 +1,6 @@
 import { HomeView } from "./views/pages/HomeView.js";
 import { UploadView } from "./views/pages/UploadView.js";
+import { WagleView } from "./views/pages/WagleView.js";
 
 export default (container) => {
   const home = () => {
@@ -7,8 +8,8 @@ export default (container) => {
   };
 
   const detail = (params) => {
-    const { id } = params;
-    container.textContent = `This is Detail Page with Id ${id}`;
+    const { id: stationId } = params;
+    container.innerHTML = WagleView(stationId);
   };
 
   const notFound = () => {
