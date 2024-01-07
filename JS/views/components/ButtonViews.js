@@ -21,3 +21,9 @@ export const UploadSubmitView = () => {
 <button class="upload__submit-btn">작성 완료</button>
   `;
 };
+
+export const WagleLinkView = (stationId) => {
+  return `
+<a data-navigate href="station/${stationId}"  class="subway-line__station" id="${stationId}"></a>
+  `;
+};
