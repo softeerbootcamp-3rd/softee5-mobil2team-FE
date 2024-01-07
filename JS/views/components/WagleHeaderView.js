@@ -1,10 +1,18 @@
+import { stationList } from "../../data.js";
 import { WagleTagListView } from "./WagleTagListView.js";
 
-export const WagleHeaderView = (prevStation, currStation, nextStation) => {
+export const WagleHeaderView = (stationId) => {
+  const currStationIdx = Number(stationId);
+  const prevStationIdx =
+    (currStationIdx - 1 + stationList.length) % stationList.length;
+  const nextStationIdx = (currStationIdx + 1) % stationList.length;
+  console.log(prevStationIdx, currStationIdx, nextStationIdx);
   return `
 <header class="wagle__header">
   <menu class="wagle__header__station">
-    <button class="wagle__header__station__btn">${prevStation}</button>
+    <a href="/station/${nextStationIdx}" class="wagle__header__station__btn">${
+    stationList[prevStationIdx]
+  }</a>
     <div class="station__title">
       <svg
         class="circle"
@@ -16,9 +24,11 @@ export const WagleHeaderView = (prevStation, currStation, nextStation) => {
       >
         <circle cx="6" cy="6" r="6" fill="#00DFA9" />
       </svg>
-      <h3 class="station__title__text">${currStation}</h3>
+      <h3 class="station__title__text">${stationList[currStationIdx]}</h3>
     </div>
-    <button class="wagle__header__station__btn">${nextStation}</button>
+    <a href="/station/${nextStationIdx}" class="wagle__header__station__btn">${
+    stationList[nextStationIdx]
+  }</a>
   </menu>
   ${WagleTagListView()}
 </header>
