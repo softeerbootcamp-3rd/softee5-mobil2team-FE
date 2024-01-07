@@ -10,11 +10,17 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
   .upload__cancle-btn {
     align-self: flex-end;
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
     margin: 10px 0;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
   }
 }
 
@@ -112,7 +118,7 @@
       border-radius: 8px;
     }
   }
-  .focus {
-    border: 1px solid $green_700;
+  .selected {
+    border: 2px solid $green_600;
   }
 }
