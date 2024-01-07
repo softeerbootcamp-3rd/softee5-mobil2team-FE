@@ -1,6 +1,9 @@
+import { HomeView } from "./views/pages/HomeView.js";
+import { UploadView } from "./views/pages/UploadView.js";
+
 export default (container) => {
   const home = () => {
-    container.textContent = "This is Home page";
+    container.innerHTML = HomeView();
   };
 
   const detail = (params) => {
@@ -12,9 +15,14 @@ export default (container) => {
     container.textContent = "Page Not Found!";
   };
 
+  const upload = () => {
+    container.innerHTML = UploadView();
+  };
+
   return {
     home,
     detail,
     notFound,
+    upload,
   };
 };
