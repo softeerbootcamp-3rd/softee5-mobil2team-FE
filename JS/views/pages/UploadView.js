@@ -8,7 +8,9 @@ import { UploadTagListView } from "../components/UploadTagListView.js";
 
 export const UploadView = () => {
   /**
-   * will fix text count
+   * will fix
+   * text count
+   * photo
    */
   return `
 <div class="upload">  
@@ -22,7 +24,9 @@ ex) 오늘 출근 지옥이다..."
     ></textarea>
     <span class="upload__text-count">0/100</span>
 </div>
-    ${UploadPhotoListView()}
+    
     ${UploadSubmitView()}
     `;
 };
+
+// ${UploadPhotoListView()}
