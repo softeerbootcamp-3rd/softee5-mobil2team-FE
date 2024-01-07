@@ -9,7 +9,7 @@ export const WagleHeaderView = (stationId) => {
   return `
 <header class="wagle__header">
   <menu class="wagle__header__station">
-    <a href="/station/${nextStationIdx}" class="wagle__header__station__btn">${
+    <a href="/station/${prevStationIdx}" class="wagle__header__station__btn">${
     stationList[prevStationIdx]
   }</a>
     <div class="station__title">
