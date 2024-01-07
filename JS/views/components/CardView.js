@@ -4,11 +4,18 @@ import { CardHeaderView } from "./CardHeaderView.js";
 import { OnlyImgCardView } from "./OnlyImgCardView.js";
 import { OnlyTextCardView } from "./OnlyTextCardView.js";
 
-export const CardView = ({ profileImg, title, time, text, img, like }) => {
+export const CardView = ({
+  profileImg,
+  title,
+  time,
+  text,
+  img,
+  likeCount = 0,
+}) => {
   /**
    * will fix
    * props name
-   *
+   * like count
    */
   return `
 <section class="wagle__main__card">
@@ -18,7 +25,7 @@ export const CardView = ({ profileImg, title, time, text, img, like }) => {
         ${img && text ? BothCardView(text, img) : null}
         ${!text ? OnlyImgCardView(img) : null}
     </article>
-    ${CardFooterView(like)}
+    ${CardFooterView(likeCount)}
 </section>
     `;
 };
