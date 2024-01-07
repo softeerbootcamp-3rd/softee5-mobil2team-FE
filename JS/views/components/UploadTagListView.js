@@ -1,3 +1,6 @@
+import { tagList } from "../../data.js";
+import { TagView } from "./TagView.js";
+
 export const UploadTagListView = () => {
   /**
    * will fix
