@@ -21,9 +21,9 @@ export const CardView = ({
 <section class="wagle__main__card">
     ${CardHeaderView(profileImg, title, time)}
     <article class="card__content">
-        ${!img ? OnlyTextCardView(text) : null}
-        ${img && text ? BothCardView(text, img) : null}
-        ${!text ? OnlyImgCardView(img) : null}
+        ${!img ? OnlyTextCardView(text) : ""}
+        ${img && text ? BothCardView(text, img) : ""}
+        ${!text ? OnlyImgCardView(img) : ""}
     </article>
     ${CardFooterView(likeCount)}
 </section>
