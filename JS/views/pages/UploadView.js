@@ -23,9 +23,8 @@ export const UploadView = () => {
 ex) 오늘 출근 지옥이다..."
     ></textarea>
     <span class="upload__text-count">0/100</span>
-</div>
-    
     ${UploadSubmitView()}
+</div>
     `;
 };
 
