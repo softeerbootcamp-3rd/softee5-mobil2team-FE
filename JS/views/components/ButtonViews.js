@@ -1,7 +1,9 @@
+import pencil from "../../../assets/pencil_img.svg";
+
 export const UploadLinkView = () => {
   return `
 <button class="go-upload">
-    <img src="assets/pencil_img.svg" />
+    <img src="${pencil}" />
 </button>
 `;
 };
