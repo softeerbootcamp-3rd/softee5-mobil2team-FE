@@ -1,8 +1,9 @@
+import { tagList } from "../../data.js";
 import { TagView } from "./TagView.js";
 
 export const WagleTagListView = () => {
   /**
-   * tagList를 서버에서 받아오기
+   * tagList를 서버에서 받아오기 -> 임시로 프론트 데이터 사용
    */
   return `
     <ul class="wagle__header__tag-list">

@@ -1,9 +1,10 @@
 import { BothCardView } from "./BothCardView.js";
 import { CardFooterView } from "./CardFooterView.js";
 import { CardHeaderView } from "./CardHeaderView.js";
+import { OnlyImgCardView } from "./OnlyImgCardView.js";
 import { OnlyTextCardView } from "./OnlyTextCardView.js";
 
-export const CardView = ({ profileImg, title, time, text, img }) => {
+export const CardView = ({ profileImg, title, time, text, img, like }) => {
   /**
    * will fix
    * props name

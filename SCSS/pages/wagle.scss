@@ -24,15 +24,18 @@
   width: 100%;
   height: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 16px;
 
   .wagle__header__station__btn {
     @extend %B_16;
     color: $gray_500;
+    flex-basis: min-content;
     width: max-content;
+    flex-grow: 1;
     height: max-content;
+    text-align: center;
   }
 }
 .wagle__header__tag-list {
