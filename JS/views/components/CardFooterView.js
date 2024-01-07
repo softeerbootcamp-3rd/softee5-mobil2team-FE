@@ -1,12 +1,14 @@
-export const CardFooterView = (like) => {
+import heart from "../../../assets/heart_img.svg";
+
+export const CardFooterView = (likeCount) => {
   return `
 <footer class="card__footer">
     <img
-        src="assets/heart_img.svg"
+        src="${heart}"
         alt="like"
         class="card__footer__like-img"
     />
-    <span class="card__footer__like-count">${like}</span>
+    <span class="card__footer__like-count">${likeCount}</span>
 </footer>    
     `;
 };
