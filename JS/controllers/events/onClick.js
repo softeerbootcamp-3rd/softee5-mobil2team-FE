@@ -1,3 +1,5 @@
+
+import { gotoNearWagle } from "../handlers/nearWagleHandler";
 import {
   uploadCardHandler,
   tagSelectHandler,
@@ -8,6 +10,7 @@ const clickHandlerMap = {
   "js-onUpload": uploadCardHandler,
   "js-onTagSelect": tagSelectHandler,
   "js-onImgSelect": imgSelectHandler,
+  "js-nearWagle": gotoNearWagle,
 };
 
 export const onClick = (event) => {
