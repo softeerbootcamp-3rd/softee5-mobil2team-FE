@@ -6,6 +6,8 @@ const modal = document.querySelector(".modal");
 
 export const initEventListener = () => {
   app.addEventListener("click", onClick);
+  modal.addEventListener("input", onClick);
   modal.addEventListener("click", onModalClick);
   modal.addEventListener("submit", onModalSubmit);
+
 };

@@ -1,4 +1,4 @@
-
+import { textCountHandler } from "../handlers/textCountHandler.js";
 import { gotoNearWagle } from "../handlers/nearWagleHandler";
 import {
   uploadCardHandler,
@@ -8,6 +8,7 @@ import {
 
 const clickHandlerMap = {
   "js-onUpload": uploadCardHandler,
+  "js-textCount": textCountHandler,
   "js-onTagSelect": tagSelectHandler,
   "js-onImgSelect": imgSelectHandler,
   "js-nearWagle": gotoNearWagle,

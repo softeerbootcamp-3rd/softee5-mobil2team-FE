@@ -21,7 +21,8 @@ export const UploadView = (imageList) => {
     <textarea
     id="content"
     name="content"
-    class="upload__textarea"
+    class="js-textCount upload__textarea"
+
     placeholder="지금 지하철에서 어떤 일이 일어나고 있나요?
 ex) 오늘 출근 지옥이다..."
     ></textarea>
@@ -31,5 +32,3 @@ ex) 오늘 출근 지옥이다..."
 </form>
     `;
 };
-
-//
