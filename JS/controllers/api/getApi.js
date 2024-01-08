@@ -25,7 +25,6 @@ export const fetchCardList = async (stationId) => {
     const responseData = await response.json();
     const cardList = responseData.data.posts;
     renderWagle(stationId, cardList);
-    console.log("data: ", cardList);
   } catch (error) {
     console.error("Error fetching data:", error.message);
   }
