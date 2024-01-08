@@ -22,6 +22,15 @@ export const WagleLinkView = (stationId) => {
   `;
 };
 
+export const NearWagleTooltipView = () => {
+  return `
+<div class="subway-line__near-tooltip">
+  <div class="near-tooltip__baloon">나와 가까운 사람들의 와글와글을 구경해보세요!</div>
+  <img src="tooltip_polygon.svg"/>
+</div>
+  `
+}
+
 export const NearWagleView = () => {
   return `
 <div class="js-nearWagle subway-line__near-btn">

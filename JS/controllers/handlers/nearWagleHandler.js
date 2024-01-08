@@ -1,6 +1,11 @@
 import { getNearStation } from "../api/getApi";
 
 export const gotoNearWagle = (target) => {
+  const tooltipElement = document.querySelector('.subway-line__near-tooltip');
+  if (tooltipElement) {
+      tooltipElement.style.display = 'none';
+  }
+  
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var latitude = position.coords.latitude;

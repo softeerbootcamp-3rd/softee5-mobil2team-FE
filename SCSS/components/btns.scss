@@ -34,6 +34,32 @@
   }
 }
 
+.subway-line__near-tooltip {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 100px;
+}
+
+.near-tooltip__baloon {
+  display: flex;
+  padding: 6px 11px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 14px;
+  background: $green_700;
+
+  color: $gray_100;
+  text-align: center;
+  @extend %R_12;
+}
+
+
 .subway-line__near-btn {
   border-radius: 25px;
   background-color: $gray_700;
