@@ -1,3 +1,4 @@
+import { UploadLinkView } from "./ButtonViews.js";
 import { WagleHeaderView } from "./wagle/WagleHeaderView.js";
 
 const loadingCardView = () => {
@@ -23,6 +24,7 @@ export const WagleLoadingView = (stationId) => {
     ${loadingCardView()}
     ${loadingCardView()}
     <main>
+    ${UploadLinkView()}
 </div>
     `;
 };
