@@ -1,18 +1,12 @@
-import pencil from "../../../assets/pencil_img.svg";
-
 export const UploadLinkView = () => {
   return `
-<button class="go-upload">
-    <img src="${pencil}" />
-</button>
+<button class="js-onUpload go-upload"></button>
 `;
 };
 
 export const UploadCancelView = () => {
   return `
-<button class="upload__cancle-btn">
-    <img src="assets/cancle_img.svg" alt="cancle" />
-</button>
+<button class="upload__cancle-btn"></button>
   `;
 };
 

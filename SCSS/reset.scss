@@ -48,3 +48,7 @@ li {
 html {
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui;
 }
+dialog:modal {
+  max-width: 100%;
+  max-height: 100%;
+}

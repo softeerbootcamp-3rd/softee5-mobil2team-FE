@@ -1,5 +1,15 @@
 import createRouter from "./JS/router.js";
 import createPages from "./JS/pages.js";
+import { screenSizeHandler } from "./JS/controllers/screenSizeHandler.js";
+import { initEventListener } from "./JS/controllers/init/initEventListener.js";
+import { initUploadModal } from "./JS/controllers/init/initUploadModal.js";
+import { closeDialog } from "./JS/controllers/handlers/modalHandler.js";
+
+(function () {
+  screenSizeHandler();
+  initUploadModal();
+  initEventListener();
+})();
 
 const container = document.getElementById("app");
 
@@ -28,3 +38,13 @@ document.body.addEventListener("click", (event) => {
     router.navigate(target.href);
   }
 });
+
+/**
+ * will fix
+ */
+const goBackHandler = () => {
+  router.navigate("/");
+  closeDialog();
+};
+
+window.addEventListener("popstate", goBackHandler);

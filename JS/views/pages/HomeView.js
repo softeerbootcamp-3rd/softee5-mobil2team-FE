@@ -12,7 +12,8 @@ export const HomeView = () => {
     <div class="subway-line__empty--edge"></div>
     ${stationGrid.map((stationId) => WagleLinkView(stationId)).join(" ")}
   </div>
-  ${UploadLinkView()}
+
 </div>
     `;
 };
+/*${UploadLinkView()}*/
