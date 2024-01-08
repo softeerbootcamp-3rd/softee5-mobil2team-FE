@@ -33,3 +33,55 @@
     background-color: $green_700;
   }
 }
+
+.subway-line__near-tooltip {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 100px;
+}
+
+.near-tooltip__baloon {
+  display: flex;
+  padding: 6px 11px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 14px;
+  background: $green_700;
+
+  color: $gray_100;
+  text-align: center;
+  @extend %R_12;
+}
+
+
+.subway-line__near-btn {
+  border-radius: 25px;
+  background-color: $gray_700;
+  justify-content: center;
+  display: inline-flex;
+  padding: 12px 14px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 4px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+}
+
+.near_img {
+  width: max-content;
+  height: max-content;
+}
+
+.near-btn__text {
+  color: $gray_100;
+  text-align: center;
+  @extend %SB_14;
+}

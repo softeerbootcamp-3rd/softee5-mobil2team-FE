@@ -1,3 +1,4 @@
+import { closeDialog } from "../handlers/modalHandler.js";
 import { renderModal, renderWagle } from "../render.js";
 
 const BASE_URL = "http://13.209.90.251";
@@ -25,6 +26,7 @@ export const fetchCardList = async (stationId) => {
     const responseData = await response.json();
     const cardList = responseData.data.posts;
     renderWagle(stationId, cardList);
+    closeDialog();
   } catch (error) {
     console.error("Error fetching data:", error.message);
   }
@@ -51,3 +53,30 @@ export const fetchUploadImg = async () => {
     console.error("Error fetching data:", error.message);
   }
 };
+
+export const getNearStation = async (lat, lng) => {
+  const endpoint = "/v1/station/near";
+  try {
+    const response = await fetch(
+      `${BASE_URL}${endpoint}?x=${lat}&y=${lng}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const responseData = await response.json();
+
+    /**
+     * will fix : id 받아와서 해당 위치로 화면 이동하기
+     */
+    console.log("result: ", responseData.data.stationId);
+  } catch (error) {
+    console.error("Error fetching data: ", error.message);
+  }
+}
