@@ -1,10 +1,12 @@
 import { UploadLinkView } from "../components/ButtonViews.js";
-import { WagleEmptyView } from "../components/WagleEmptyView.js";
-import { WagleHeaderView } from "../components/WagleHeaderView.js";
-import { WagleMainView } from "../components/WagleMainView.js";
+import { WagleEmptyView } from "../components/wagle/WagleEmptyView.js";
+import { WagleHeaderView } from "../components/wagle/WagleHeaderView.js";
+import { WagleMainView } from "../components/wagle/WagleMainView.js";
 
 import profileImg from "../../../assets/tag_img.svg";
 import cardImg from "../../../assets/card_img.svg";
+
+const BASE_URL = "http://13.209.90.251:80";
 
 export const WagleView = (stationId) => {
   /**
@@ -12,6 +14,38 @@ export const WagleView = (stationId) => {
    * 서버에서 카드 정보 받기 -> cardList
    * 현재역 이전역 다음역 불러오기 -> params로
    */
+  const fetchData = async () => {
+    const endpoint = "/post/postList";
+    const pageSize = 5;
+    const pageNumber = 1;
+
+    try {
+      const response = await fetch(
+        `${BASE_URL}${endpoint}?stationId=${stationId}&pageSize=${pageSize}&pageNumber=${pageNumber}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            // 다른 필요한 헤더가 있으면 추가
+          },
+          // 다른 fetch 옵션을 필요에 따라 추가
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const responseData = await response.json();
+      console.log(responseData); // 받아온 데이터를 출력하거나 원하는 작업을 수행
+    } catch (error) {
+      console.error("Error fetching data:", error.message);
+    }
+  };
+
+  // fetchData 함수 호출
+  fetchData();
+
   const cardList = [
     {
       profileImg,

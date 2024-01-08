@@ -1,5 +1,5 @@
-import { tagList } from "../../data.js";
-import { TagView } from "./TagView.js";
+import { tagList } from "../../../data.js";
+import { TagView } from "../TagView.js";
 
 export const WagleTagListView = () => {
   /**

@@ -1,4 +1,4 @@
-import icon from "../../../assets/empty_img.svg";
+import icon from "../../../../assets/empty_img.svg";
 
 export const WagleEmptyView = () => {
   return `
