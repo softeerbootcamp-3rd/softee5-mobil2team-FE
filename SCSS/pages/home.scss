@@ -1,8 +1,8 @@
-body {
+#app {
   @extend %scroll;
-  //   width: 100vw;
-  //   height: 100vh;
-  //   overflow: scroll;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
 }
 
 .container {
