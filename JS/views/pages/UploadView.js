@@ -1,3 +1,4 @@
+import { stationList } from "../../data.js";
 import {
   UploadCancelView,
   UploadSubmitView,
@@ -12,10 +13,13 @@ export const UploadView = () => {
    * text count
    * photo
    */
+  const { pathname } = window.location;
+  const stationId = pathname.split("/")[2];
+  const currStation = stationList[stationId];
   return `
 <form method="dialog" class="upload">  
     ${UploadCancelView()}
-    ${UploadHeaderView()}
+    ${UploadHeaderView(currStation)}
     ${UploadTagListView()}
     <textarea
     class="upload__textarea"
