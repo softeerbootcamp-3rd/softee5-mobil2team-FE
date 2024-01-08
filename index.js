@@ -1,5 +1,25 @@
 import createRouter from "./JS/router.js";
 import createPages from "./JS/pages.js";
+import { screenSizeHandler } from "./JS/controllers/screenSizeHandler.js";
+import { initEventListener } from "./JS/controllers/init/initEventListener.js";
+import { initUploadModal } from "./JS/controllers/init/initUploadModal.js";
+import { closeDialog } from "./JS/controllers/handlers/modalHandler.js";
+
+(function () {
+  screenSizeHandler();
+  initUploadModal();
+  initEventListener();
+})();
+
+/**
+ * will fix
+ */
+// const goBackHandler = () => {
+//   console.log("pop");
+//   closeDialog();
+// };
+
+// document.body.addEventListener("popstate", goBackHandler);
 
 const container = document.getElementById("app");
 

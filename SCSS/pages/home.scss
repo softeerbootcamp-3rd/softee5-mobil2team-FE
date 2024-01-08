@@ -1,14 +1,21 @@
+//will fix
 body {
   @extend %scroll;
-  //   width: 100vw;
-  //   height: 100vh;
-  //   overflow: scroll;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: scroll;
+}
+#app {
+  @extend %scroll;
+  width: 100vw;
+  height: 100%;
+  overflow: scroll;
 }
 
 .container {
   width: 1728px;
   height: 1117px;
-  background-image: url("/public/subway_line_img.svg");
+  background-image: url("/subway_line_img.svg");
   display: flex;
   justify-content: center;
   align-items: center;

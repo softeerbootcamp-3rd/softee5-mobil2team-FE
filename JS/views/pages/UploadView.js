@@ -13,7 +13,7 @@ export const UploadView = () => {
    * photo
    */
   return `
-<div class="upload">  
+<form method="dialog" class="upload">  
     ${UploadCancelView()}
     ${UploadHeaderView()}
     ${UploadTagListView()}
@@ -24,7 +24,7 @@ ex) 오늘 출근 지옥이다..."
     ></textarea>
     <span class="upload__text-count">0/100</span>
     ${UploadSubmitView()}
-</div>
+</form>
     `;
 };
 
