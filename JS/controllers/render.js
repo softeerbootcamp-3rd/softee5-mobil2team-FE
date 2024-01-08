@@ -9,7 +9,7 @@ export const renderWagle = (stationId, cardList) => {
   app.innerHTML = wagleHTML;
 };
 
-export const renderModal = () => {
-  const modalHTML = UploadView();
+export const renderModal = (imageList) => {
+  const modalHTML = UploadView(imageList);
   modal.innerHTML = modalHTML;
 };

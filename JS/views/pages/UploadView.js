@@ -7,7 +7,7 @@ import { UploadHeaderView } from "../components/UploadHeaderView.js";
 import { UploadPhotoListView } from "../components/UploadPhotoListView.js";
 import { UploadTagListView } from "../components/UploadTagListView.js";
 
-export const UploadView = () => {
+export const UploadView = (imageList) => {
   /**
    * will fix
    * text count
@@ -27,9 +27,10 @@ export const UploadView = () => {
 ex) 오늘 출근 지옥이다..."
     ></textarea>
     <span class="upload__text-count">0/100</span>
+    ${UploadPhotoListView(imageList)}
     ${UploadSubmitView()}
 </form>
     `;
 };
 
-// ${UploadPhotoListView()}
+//
