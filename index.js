@@ -11,16 +11,6 @@ import { closeDialog } from "./JS/controllers/handlers/modalHandler.js";
   initEventListener();
 })();
 
-/**
- * will fix
- */
-// const goBackHandler = () => {
-//   console.log("pop");
-//   closeDialog();
-// };
-
-// document.body.addEventListener("popstate", goBackHandler);
-
 const container = document.getElementById("app");
 
 const pages = createPages(container);
@@ -48,3 +38,13 @@ document.body.addEventListener("click", (event) => {
     router.navigate(target.href);
   }
 });
+
+/**
+ * will fix
+ */
+const goBackHandler = () => {
+  router.navigate("/");
+  closeDialog();
+};
+
+window.addEventListener("popstate", goBackHandler);
