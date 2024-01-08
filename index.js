@@ -4,7 +4,6 @@ import { screenSizeHandler } from "./JS/controllers/screenSizeHandler.js";
 import { initEventListener } from "./JS/controllers/init/initEventListener.js";
 
 import { closeDialog } from "./JS/controllers/handlers/modalHandler.js";
-import { renderModal } from "./JS/controllers/render.js";
 
 (function () {
   screenSizeHandler();
