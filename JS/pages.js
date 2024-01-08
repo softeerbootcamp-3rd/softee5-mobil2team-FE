@@ -2,7 +2,6 @@ import { fetchCardList } from "./controllers/api/getApi.js";
 import { WagleLoadingView } from "./views/components/LoaderViews.js";
 import { HomeView } from "./views/pages/HomeView.js";
 import { UploadView } from "./views/pages/UploadView.js";
-import { WagleView } from "./views/pages/WagleView.js";
 
 export default (container) => {
   const home = () => {

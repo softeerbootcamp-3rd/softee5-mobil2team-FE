@@ -5,7 +5,6 @@ export const showDialog = () => {
 };
 
 export const closeDialog = () => {
-  console.log("execute");
   // form.reset();
   dialog.close();
 };
