@@ -4,7 +4,8 @@ export const showDialog = () => {
   dialog.showModal();
 };
 
-export const closeDialog = (form) => {
-  form.reset();
+export const closeDialog = () => {
+  console.log("execute");
+  // form.reset();
   dialog.close();
 };

@@ -1,4 +1,4 @@
-import { stationList } from "../../data.js";
+import { stationList } from "../../../data.js";
 import { WagleTagListView } from "./WagleTagListView.js";
 
 export const WagleHeaderView = (stationId) => {
