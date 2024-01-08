@@ -1,7 +1,9 @@
+import { textCountHandler } from "../handlers/textCountHandler.js";
 import { uploadCardHandler } from "../handlers/uploadCardHandler";
 
 const clickHandlerMap = {
   "js-onUpload": uploadCardHandler,
+  "js-textCount": textCountHandler,
 };
 
 export const onClick = (event) => {
