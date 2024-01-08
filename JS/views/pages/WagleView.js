@@ -6,7 +6,7 @@ import { WagleMainView } from "../components/wagle/WagleMainView.js";
 import profileImg from "../../../assets/tag_img.svg";
 import cardImg from "../../../assets/card_img.svg";
 
-const BASE_URL = "http://13.209.90.251:80";
+const BASE_URL = "http://13.209.90.251";
 
 export const WagleView = (stationId) => {
   /**
@@ -15,7 +15,7 @@ export const WagleView = (stationId) => {
    * 현재역 이전역 다음역 불러오기 -> params로
    */
   const fetchData = async () => {
-    const endpoint = "/post/postList";
+    const endpoint = "/v1/post/postList";
     const pageSize = 5;
     const pageNumber = 1;
 
@@ -26,9 +26,7 @@ export const WagleView = (stationId) => {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            // 다른 필요한 헤더가 있으면 추가
           },
-          // 다른 fetch 옵션을 필요에 따라 추가
         }
       );
 
@@ -37,46 +35,48 @@ export const WagleView = (stationId) => {
       }
 
       const responseData = await response.json();
-      console.log(responseData); // 받아온 데이터를 출력하거나 원하는 작업을 수행
+
+      return responseData.data.posts;
     } catch (error) {
       console.error("Error fetching data:", error.message);
     }
   };
 
   // fetchData 함수 호출
-  fetchData();
+  const cardList = fetchData();
 
-  const cardList = [
-    {
-      profileImg,
-      title: "출근하기 싫은 회사원",
-      time: "12:00",
-      text: "출근하기 싫어~~~~",
-      img: cardImg,
-      likeCount: 99,
-    },
-    {
-      profileImg,
-      title: "출근하기 싫은 회사원",
-      time: "12:00",
-      text: "출근하기 싫어~~~~",
-      likeCount: 100,
-    },
-    {
-      profileImg,
-      title: "출근하기 싫은 회사원",
-      time: "12:00",
-      img: cardImg,
-      likeCount: 99,
-    },
-  ]; // dummy
   return `
 <div class="wagle">
     ${WagleHeaderView(stationId)}
 
-    ${cardList.length ? WagleMainView(cardList) : WagleEmptyView()}
+    ${cardList && cardList.length ? WagleMainView(cardList) : WagleEmptyView()}
 
     ${UploadLinkView()}
 </div>
   `;
 };
+
+// const cardList = [
+//   {
+//     profileImg,
+//     title: "출근하기 싫은 회사원",
+//     time: "12:00",
+//     text: "출근하기 싫어~~~~",
+//     img: cardImg,
+//     likeCount: 99,
+//   },
+//   {
+//     profileImg,
+//     title: "출근하기 싫은 회사원",
+//     time: "12:00",
+//     text: "출근하기 싫어~~~~",
+//     likeCount: 100,
+//   },
+//   {
+//     profileImg,
+//     title: "출근하기 싫은 회사원",
+//     time: "12:00",
+//     img: cardImg,
+//     likeCount: 99,
+//   },
+// ]; // dummy
