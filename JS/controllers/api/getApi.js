@@ -1,3 +1,4 @@
+import { closeDialog } from "../handlers/modalHandler.js";
 import { renderModal, renderWagle } from "../render.js";
 
 const BASE_URL = "http://13.209.90.251";
@@ -25,6 +26,7 @@ export const fetchCardList = async (stationId) => {
     const responseData = await response.json();
     const cardList = responseData.data.posts;
     renderWagle(stationId, cardList);
+    closeDialog();
   } catch (error) {
     console.error("Error fetching data:", error.message);
   }

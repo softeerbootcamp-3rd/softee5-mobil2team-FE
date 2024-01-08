@@ -1,7 +1,7 @@
 export const UploadPhotoView = ({ imageId, imageURL }) => {
   return `
-<article class="upload__photo" id="${imageId}">
-    <img src="${imageURL}" alt="jjal" />
+<article class="js-onImgSelect upload__photo" id="${imageId}">
+    <img class="js-onImgSelect" src="${imageURL}" alt="jjal" />
 </article>
     `;
 };
