@@ -1,13 +1,15 @@
 import { UploadLinkView } from "../components/ButtonViews.js";
-import { WagleEmptyView } from "../components/wagle/WagleEmptyView.js";
-import { WagleHeaderView } from "../components/wagle/WagleHeaderView.js";
-import { WagleMainView } from "../components/wagle/WagleMainView.js";
+import { WagleLoadingView } from "../components/LoaderViews.js";
 
-export const WagleView = (stationId, cardList) => {
+import { WagleHeaderView } from "../components/wagle/WagleHeaderView.js";
+
+export const WagleView = (stationId) => {
   return `
 <div class="wagle">
     ${WagleHeaderView(stationId)}
-    ${cardList && cardList.length ? WagleMainView(cardList) : WagleEmptyView()}
+    <div class="wagle__list">
+    ${WagleLoadingView()}
+    </div>
     ${UploadLinkView()}
 </div>
   `;
