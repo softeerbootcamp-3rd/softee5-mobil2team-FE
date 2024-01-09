@@ -1,5 +1,5 @@
 export const tagList = [
-  { img: "", text: "전체"},
+  { img: "/tag/tag_img_default.svg", text: "전체" },
   { img: "/tag/tag_img_1.svg", text: "출근러의 비명" },
   { img: "/tag/tag_img_2.svg", text: "칼퇴러의 환호" },
   { img: "/tag/tag_img_3.svg", text: "야근러의 무덤" },
