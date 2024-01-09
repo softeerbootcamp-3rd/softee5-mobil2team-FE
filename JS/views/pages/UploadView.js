@@ -22,7 +22,7 @@ export const UploadView = (imageList) => {
     id="content"
     name="content"
     class="js-textCount upload__textarea"
-
+    required
     placeholder="지금 지하철에서 어떤 일이 일어나고 있나요?
 ex) 오늘 출근 지옥이다..."
     ></textarea>
