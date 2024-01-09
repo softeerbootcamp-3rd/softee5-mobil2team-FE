@@ -24,12 +24,9 @@ export const uploadCard = async (cardData) => {
   }
 };
 
-export const likePost = async (postId, count) => {
+export const likePost = async (postData) => {
   const endpoint = "/v1/post/like";
-  const postData = {
-    postId: postId,
-    count: count,
-  };
+
   try {
     const response = await fetch(`${BASE_URL}${endpoint}`, {
       method: "POST",

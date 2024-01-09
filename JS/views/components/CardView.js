@@ -37,7 +37,7 @@ export const CardView = ({
   };
 
   const currentDate = new Date();
-  var formattedTime;
+  let formattedTime;
   if (
     originalDate.getFullYear() === currentDate.getFullYear() &&
     originalDate.getMonth() === currentDate.getMonth() &&
