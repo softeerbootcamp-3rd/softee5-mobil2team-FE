@@ -5,6 +5,5 @@ export const showDialog = () => {
 };
 
 export const closeDialog = () => {
-  // form.reset();
   dialog.close();
 };
