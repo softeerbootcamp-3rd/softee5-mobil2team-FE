@@ -8,7 +8,7 @@
 
 <br/>
 
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsofteerbootcamp-3nd%2Fsoftee5-mobil2team-BE&count_bg=%23203A40&title_bg=%23BCC1CD&icon=&icon_color=%23FFFFFF&title=hits&edge_flat=true)](https://hits.seeyoufarm.com)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsofteerbootcamp-3nd%2Fsoftee5-mobil2team-FE&count_bg=%23203A40&title_bg=%23BCC1CD&icon=&icon_color=%23FFFFFF&title=hits&edge_flat=true)](https://hits.seeyoufarm.com)
 
 </div>
 
@@ -92,7 +92,7 @@
 ## 아키텍쳐 🛠️
 
 ### ER Diagram
-<img src = "https://github.com/softeerbootcamp-3nd/softee5-mobil2team-BE/assets/48647199/4c85a8af-f3df-481a-971d-3aad792e8a5f" width="75%" height="75%">
+<img src = "https://github.com/softeerbootcamp-3nd/softee5-mobil2team-FE/assets/48647199/7f7701dd-4c45-4bfc-aac7-4805c1d62ef3" width="75%" height="75%">
 
 ### FrontEnd Directory Structure
 ```bash
