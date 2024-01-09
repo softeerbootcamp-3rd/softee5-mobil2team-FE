@@ -27,7 +27,7 @@ const setFormData = (form) => {
   const stationId = getStationId();
   newFormData.set("tagId", Number(selectedTagId) + 1); // DB index 보정
   newFormData.set("stationId", Number(stationId) + 1); // DB index 보정
-  newFormData.set("imgId", Number(selectedImgId));
+  newFormData.set("imageId", Number(selectedImgId));
   return newFormData;
 };
 
@@ -35,7 +35,6 @@ export const onModalSubmit = (event) => {
   event.preventDefault();
   const form = event.target;
   const newFormData = setFormData(form);
-
   let newCard = Object.fromEntries(newFormData);
   uploadCard(newCard);
   form.reset();
