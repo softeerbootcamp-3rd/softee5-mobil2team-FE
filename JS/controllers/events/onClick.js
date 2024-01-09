@@ -5,6 +5,7 @@ import {
   tagSelectHandler,
   imgSelectHandler,
 } from "../handlers/uploadCardHandler";
+import { closeDialog } from "../handlers/modalHandler.js";
 
 const clickHandlerMap = {
   "js-onUpload": uploadCardHandler,
@@ -12,6 +13,7 @@ const clickHandlerMap = {
   "js-onTagSelect": tagSelectHandler,
   "js-onImgSelect": imgSelectHandler,
   "js-nearWagle": gotoNearWagle,
+  "js-onCloseModal": closeDialog,
 };
 
 export const onClick = (event) => {

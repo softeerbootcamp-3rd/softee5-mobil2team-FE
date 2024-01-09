@@ -14,7 +14,7 @@ export const UploadView = (imageList) => {
   const currStation = stationList[stationId];
   return `
 <form method="dialog" class="upload">  
-<button type="button" class="upload__cancle-btn"></button>
+<button type="button" class="js-onCloseModal upload__cancle-btn"></button>
     ${UploadHeaderView(currStation)}
     ${UploadTagListView()}
     <textarea
