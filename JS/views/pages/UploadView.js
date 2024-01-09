@@ -1,5 +1,4 @@
 import { stationList } from "../../data.js";
-import { UploadCancelView } from "../components/ButtonViews.js";
 import { UploadHeaderView } from "../components/UploadHeaderView.js";
 import { UploadPhotoListView } from "../components/UploadPhotoListView.js";
 import { UploadTagListView } from "../components/UploadTagListView.js";
@@ -15,7 +14,7 @@ export const UploadView = (imageList) => {
   const currStation = stationList[stationId];
   return `
 <form method="dialog" class="upload">  
-    ${UploadCancelView()}
+<button type="button" class="js-onCloseModal upload__cancle-btn"></button>
     ${UploadHeaderView(currStation)}
     ${UploadTagListView()}
     <textarea
