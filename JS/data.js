@@ -1,4 +1,5 @@
 export const tagList = [
+  { img: "", text: "전체"},
   { img: "/tag/tag_img_1.svg", text: "출근러의 비명" },
   { img: "/tag/tag_img_2.svg", text: "칼퇴러의 환호" },
   { img: "/tag/tag_img_3.svg", text: "야근러의 무덤" },
@@ -17,7 +18,7 @@ export const stationList = [
   "을지로입구",
   "을지로3가",
   "을지로4가",
-  "동대문역사...",
+  "동대문역사문화공원",
   "신당",
   "상왕십리",
   "왕십리",
