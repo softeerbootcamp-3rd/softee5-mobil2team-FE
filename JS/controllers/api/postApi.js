@@ -28,7 +28,7 @@ export const likePost = async (postId, count) => {
   const endpoint = "/v1/post/like";
   const postData = {
     postId: postId,
-    count: count
+    count: count,
   };
   try {
     const response = await fetch(`${BASE_URL}${endpoint}`, {

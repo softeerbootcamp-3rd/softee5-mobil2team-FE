@@ -10,11 +10,11 @@ export const fetchCardList = async (stationId, tagId) => {
   const correctedStationId = Number(stationId) + 1;
 
   // tagId가 있는 경우 추가
-  const tagParam = tagId ? `&tagId=${tagId}` : "";
+  const tagParam = tagId ? tagId : "";
 
   try {
     const response = await fetch(
-      `${BASE_URL}${endpoint}?stationId=${correctedStationId}&pageSize=${pageSize}&pageNumber=${pageNumber}${tagParam}`,
+      `${BASE_URL}${endpoint}?stationId=${correctedStationId}&pageSize=${pageSize}&pageNumber=${pageNumber}&tagId=${tagParam}`,
       {
         method: "GET",
         headers: {

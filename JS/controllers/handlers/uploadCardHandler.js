@@ -6,7 +6,7 @@ import { uploadCard } from "../api/postApi.js";
 let selectedTagId = "";
 let selectedImgId = "";
 
-export const tagSelectHandler = (target) => {
+export const uploadTagHandler = (target) => {
   const tagElement = target.closest(".tag");
   const list = [...tagElement.parentNode.children];
   list.forEach((tag) => tag.classList.remove("selected-tag"));
@@ -21,12 +21,17 @@ export const waggleTagSelectHandler = (target) => {
   list.forEach((tag) => tag.classList.remove("selected-tag"));
   tagElement.classList.add("selected-tag");
   selectedTagId = tagElement.id;
-
   const stationId = getStationId();
-  if (Number(selectedTagId) === 0) {
-    fetchCardList(stationId);
-  } else {
-    fetchCardList(stationId, Number(selectedTagId));
+  fetchCardList(stationId, Number(selectedTagId));
+};
+
+export const tagSelectHandler = (target) => {
+  const parent = target.closest("ul");
+  if (parent.classList.contains("upload__tag-list")) {
+    return uploadTagHandler(target);
+  }
+  if (parent.classList.contains("wagle__header__tag-list")) {
+    return waggleTagSelectHandler(target);
   }
 };
 
@@ -40,11 +45,18 @@ export const imgSelectHandler = (target) => {
 
 const setFormData = (form) => {
   const newFormData = new FormData(form);
+
   const stationId = getStationId();
   newFormData.set("tagId", Number(selectedTagId) + 1); // DB index 보정
   newFormData.set("stationId", Number(stationId) + 1); // DB index 보정
   newFormData.set("imageId", Number(selectedImgId));
+
   return newFormData;
+};
+
+const resetId = () => {
+  selectedTagId = "";
+  selectedImgId = "";
 };
 
 export const onModalSubmit = (event) => {
@@ -52,7 +64,12 @@ export const onModalSubmit = (event) => {
   const form = event.target;
   const newFormData = setFormData(form);
   let newCard = Object.fromEntries(newFormData);
+
+  newCard.tagId = Number(newCard.tagId);
+  newCard.stationId = Number(newCard.stationId);
+  newCard.imageId = Number(newCard.imageId);
   uploadCard(newCard);
+  resetId();
   form.reset();
 };
 
