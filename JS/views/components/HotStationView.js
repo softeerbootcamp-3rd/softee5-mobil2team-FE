@@ -6,6 +6,5 @@ export const HotStationView = (id, stationName) => {
         <span class="js-onHotStationSelect ho_station__text">${stationName}</span>
       </a>
     </li>
-    </a>
   `
 }
