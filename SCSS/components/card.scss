@@ -96,9 +96,29 @@
   flex-shrink: 0;
   padding-left: 16px;
 
+  .card__footer__like-container {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+
+  .card__footer__like-animate {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    animation: heartAnimation 1s ease-out;
+    z-index: 1;
+  }
+  
+  @keyframes heartAnimation {
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100px) translateX(var(--random)) scale(2); opacity: 0; }
+  }
+
   .card__footer__like-img {
     width: 24px;
     height: 24px;
+    position: absolute;
   }
 
   .card__footer__like-count {

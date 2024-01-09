@@ -12,6 +12,22 @@ const increaseLikeCount = (postId) => {
   }
 }
 
+const animateHeart = (container) => {
+  const heartImg = document.createElement('img');
+  heartImg.src = '/assets/heart_img.svg';
+  heartImg.alt = 'heart';
+  heartImg.classList.add('card__footer__like-animate');
+
+  const randomValue = Math.floor(Math.random() * 81) - 40;
+  heartImg.style.setProperty('--random', `${randomValue}px`);
+
+  container.appendChild(heartImg);
+
+  setTimeout(() => {
+    heartImg.remove();
+  }, 1000);
+}
+
 const sendLikes = () => {
   pendingLikes.forEach(postInfo => {
     likePost(postInfo);
@@ -23,11 +39,13 @@ const debouncedUpdateCount = debounce(sendLikes, 300);
 
 export const likePostHandler = (target) => {
   const postId = target.closest(".wagle__main__card").id;
+  const heartContainer = document.getElementById(postId).querySelector(".card__footer__like-container");
   const spanElement = document.getElementById(postId).querySelector(".card__footer__like-count");
   
   const currentCount = spanElement.textContent || spanElement.innerText;
   spanElement.textContent = Number(currentCount) + 1;
 
   increaseLikeCount(postId);
+  animateHeart(heartContainer);
   debouncedUpdateCount();
 }
