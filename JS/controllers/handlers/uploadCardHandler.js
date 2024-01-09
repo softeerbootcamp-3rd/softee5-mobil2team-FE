@@ -1,5 +1,5 @@
 import { showDialog } from "./modalHandler.js";
-import { fetchUploadImg } from "../api/getApi.js";
+import { fetchCardList, fetchUploadImg } from "../api/getApi.js";
 import { getStationId } from "../utils/getStationId.js";
 import { uploadCard } from "../api/postApi.js";
 
@@ -12,6 +12,8 @@ export const tagSelectHandler = (target) => {
   list.forEach((tag) => tag.classList.remove("selected-tag"));
   tagElement.classList.add("selected-tag");
   selectedTagId = tagElement.id;
+  const stationId = getStationId();
+  fetchCardList(stationId, selectedTagId);
 };
 
 export const imgSelectHandler = (target) => {
