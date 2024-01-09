@@ -1,17 +1,15 @@
-import tagImg from "../assets/tag_img.svg";
-
 export const tagList = [
-  { img: tagImg, text: "출근자의 비명" },
-  { img: tagImg, text: "지각 확정!" },
-  { img: tagImg, text: "지옥철SOS" },
-  { img: tagImg, text: "비상비상" },
-  { img: tagImg, text: "칼퇴러의 환호" },
-  { img: tagImg, text: "야근러의 무덤" },
-  { img: tagImg, text: "야작러의 눈물" },
-  { img: tagImg, text: "맛집 뿌시러 갑니다" },
-  { img: tagImg, text: "날씨 요정" },
-  { img: tagImg, text: "교수님 우리 절교해요" },
-  { img: tagImg, text: "가벼운 발걸음 총총" },
+  { img: "/tag/tag_img_1.svg", text: "출근러의 비명" },
+  { img: "/tag/tag_img_2.svg", text: "칼퇴러의 환호" },
+  { img: "/tag/tag_img_3.svg", text: "야근러의 무덤" },
+  { img: "/tag/tag_img_4.svg", text: "통학러의 눈물" },
+  { img: "/tag/tag_img_5.svg", text: "밤샌자의 절규" },
+  { img: "/tag/tag_img_6.svg", text: "지각 확정" },
+  { img: "/tag/tag_img_7.svg", text: "내일부터 금주" },
+  { img: "/tag/tag_img_8.svg", text: "맛집 뿌셔" },
+  { img: "/tag/tag_img_9.svg", text: "플리 공유" },
+  { img: "/tag/tag_img_10.svg", text: "지옥철 SOS" },
+  { img: "/tag/tag_img_11.svg", text: "비상!" },
 ];
 export const stationList = [
   "충정로",
