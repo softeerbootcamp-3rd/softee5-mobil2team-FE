@@ -24,7 +24,7 @@ export const uploadCard = async (cardData) => {
   }
 };
 
-export const postLikes = async (postId, count) => {
+export const likePost = async (postId, count) => {
   const endpoint = "/v1/post/like";
   const postData = {
     postId: postId,
