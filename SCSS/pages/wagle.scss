@@ -11,7 +11,7 @@
     align-items: center;
     position: relative;
   }
-  
+
   .wagle__header {
     width: 100%;
     height: 130px;
@@ -20,7 +20,7 @@
     justify-content: space-around;
     align-items: center;
   }
-  
+
   .wagle__header__station {
     width: 100%;
     height: 50px;
@@ -28,7 +28,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 16px;
-  
+
     .wagle__header__station__btn {
       font-size: 16px;
       font-style: normal;
@@ -56,16 +56,21 @@
     gap: 8px;
     overflow-x: scroll;
   }
-  
-  .wagle__main--empty {
+
+  .wagle__list {
     width: 100%;
     height: calc(100% - 130px);
+  }
+
+  .wagle__main--empty {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 21px;
-  
+
     .main__icon--empty {
       width: 120px;
       height: 120px;
@@ -78,7 +83,7 @@
       color: $gray_700;
     }
   }
-  
+
   .wagle__main {
     scrollbar-width: none; /* 파이어폭스 */
     /* ( 크롬, 사파리, 오페라, 엣지 ) 동작 */
@@ -86,7 +91,7 @@
       display: none;
     }
     width: 100%;
-    height: calc(100% - 130px);
+    height: 100%;
     overflow-y: scroll;
     padding-bottom: 30px;
     display: flex;
@@ -94,7 +99,7 @@
     justify-content: flex-start;
     align-items: center;
     gap: 19px;
-  
+
     .wagle__main__card {
       width: 100%;
       height: max-content;
@@ -104,7 +109,7 @@
       background-color: $gray_800;
     }
   }
-  
+
   .wagle__main--loading {
     overflow-y: hidden;
     .wagle__main__card {
@@ -119,7 +124,7 @@
           opacity: 0.8;
         }
       }
-  
+
       animation: skeleton-gradient 1.5s infinite ease-in-out;
     }
   }
@@ -127,7 +132,7 @@
 
 // 반응형 CSS
 @media screen and (min-width: 800px) {
-  .wagle{
+  .wagle {
     height: 100%;
     max-width: 1024px;
     margin: 0 auto;
@@ -147,45 +152,49 @@
     align-items: center;
     gap: 20px;
   }
-
-
-.wagle__list {
-  width: 100%;
-  height: calc(100% - 130px);
-}
-
-.wagle__main--empty {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 21px;
-
-  .main__icon--empty {
-    width: 120px;
-    height: 120px;
+  .wagle__list {
+    width: 100%;
+    height: calc(100% - 130px);
   }
-  .main__text--empty {
-    @extend %M_16;
-    color: $gray_700;
+
+  .wagle__main--empty {
+    width: 50%;
+    height: 100%;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 21px;
+
+    .main__icon--empty {
+      width: 120px;
+      height: 120px;
+    }
+    .main__text--empty {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      color: $gray_700;
+    }
   }
-}
-  
 
-.wagle__main {
-  @extend %scroll;
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-  padding-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 19px;
-
+  .wagle__main {
+    scrollbar-width: none; /* 파이어폭스 */
+    /* ( 크롬, 사파리, 오페라, 엣지 ) 동작 */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    width: 50%;
+    height: 100%;
+    margin-right: 40px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 19px;
 
     .wagle__main__card {
       width: 100%;
@@ -204,7 +213,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 16px;
-  
+
     .wagle__header__station__btn {
       font-size: 16px;
       font-style: normal;
@@ -218,7 +227,7 @@
       text-align: center;
     }
   }
-  
+
   .wagle__header__tag-list {
     scrollbar-width: none; /* 파이어폭스 */
     /* ( 크롬, 사파리, 오페라, 엣지 ) 동작 */
@@ -257,7 +266,7 @@
           opacity: 0.8;
         }
       }
-  
+
       animation: skeleton-gradient 1.5s infinite ease-in-out;
     }
   }
