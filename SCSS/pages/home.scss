@@ -30,6 +30,8 @@ body {
   grid-template-columns: 1fr repeat(13, 63px) 1fr;
   grid-template-rows: 51px repeat(8, 1fr) 16px 26px;
   gap: 0 32px;
+  overflow: visible;
+  position: relative;
 }
 
 .subway-line__empty--center {
@@ -65,5 +67,26 @@ body {
   }
   &:nth-child(n + 37) {
     place-self: end center;
+  }
+
+  .subway-line__station__pin {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    transform: translate(-32%, -80%);
+
+    @keyframes pin-gradient {
+      0% {
+        scale: 1;
+      }
+      50% {
+        scale: 1.5;
+        transform: translate(-20%, -80%);
+      }
+      100% {
+        scale: 1;
+      }
+    }
+    animation: pin-gradient 1.5s infinite ease-in-out;
   }
 }
