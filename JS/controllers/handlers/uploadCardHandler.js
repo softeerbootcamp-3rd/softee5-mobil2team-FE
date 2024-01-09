@@ -21,14 +21,14 @@ export const waggleTagSelectHandler = (target) => {
   list.forEach((tag) => tag.classList.remove("selected-tag"));
   tagElement.classList.add("selected-tag");
   selectedTagId = tagElement.id;
-  
+
   const stationId = getStationId();
-  if(Number(selectedTagId) === 0) {
+  if (Number(selectedTagId) === 0) {
     fetchCardList(stationId);
   } else {
     fetchCardList(stationId, Number(selectedTagId));
   }
-}
+};
 
 export const imgSelectHandler = (target) => {
   const imgElement = target.closest(".upload__photo");
