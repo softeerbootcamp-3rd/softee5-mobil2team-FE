@@ -12,6 +12,57 @@ body {
   overflow: scroll;
 }
 
+.home__header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.home__header__title {
+  background-color: $gray_900;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  gap: 8px;
+  padding: 18px 16px;
+}
+
+.home__header__hot-station {
+  @extend %scroll;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  overflow-x: scroll;
+  padding: 0px 16px;
+}
+
+.hot_station {
+  display: flex;
+  padding: 7px 10px 7px 7px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 40px;
+  border: 2px solid $gray_600;
+  background: $gray_900;
+
+  .hot_station__img {
+    width: 20px;
+  }
+  .hot_station__text {
+    @extend %M_14;
+  }
+}
+
 .container {
   width: 1728px;
   height: 1117px;
@@ -20,6 +71,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 159px 201px 185px 201px;
+  margin-top: 60px;
 }
 
 .subway-line {

@@ -1,5 +1,5 @@
 import { closeDialog } from "../handlers/modalHandler.js";
-import { renderModal, renderWagle } from "../render.js";
+import { renderHotStations, renderModal, renderWagle } from "../render.js";
 
 const BASE_URL = "http://13.209.90.251";
 
@@ -54,7 +54,32 @@ export const fetchUploadImg = async () => {
   }
 };
 
+export const getHotStations = async () => {
+  const endpoint = "/v1/station/hot";
+  try {
+    const response = await fetch(
+      `${BASE_URL}${endpoint}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const responseData = await response.json();
+    const stationList = responseData.data.stations;
+    renderHotStations(stationList);
+  } catch (error) {
+    console.error("Error fetching data: ", error.message);
+  }
+}
+
 export const getNearStation = async (lat, lng, target) => {
+
   const endpoint = "/v1/station/near";
   try {
     const response = await fetch(`${BASE_URL}${endpoint}?x=${lat}&y=${lng}`, {
