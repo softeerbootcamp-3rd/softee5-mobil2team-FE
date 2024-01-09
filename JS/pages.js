@@ -2,6 +2,7 @@ import { fetchCardList, getHotStations } from "./controllers/api/getApi.js";
 import { WagleLoadingView } from "./views/components/LoaderViews.js";
 import { HomeView } from "./views/pages/HomeView.js";
 import { UploadView } from "./views/pages/UploadView.js";
+import { WagleView } from "./views/pages/WagleView.js";
 
 export default (container) => {
   const home = () => {
@@ -11,7 +12,7 @@ export default (container) => {
 
   const detail = (params) => {
     const { id: stationId } = params;
-    container.innerHTML = WagleLoadingView(stationId);
+    container.innerHTML = WagleView(stationId);
     fetchCardList(stationId);
   };
 

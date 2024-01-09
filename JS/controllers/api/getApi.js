@@ -1,5 +1,5 @@
 import { closeDialog } from "../handlers/modalHandler.js";
-import { renderHotStations, renderModal, renderWagle } from "../render.js";
+import { renderHotStations, renderModal, renderWagleList } from "../render.js";
 
 const BASE_URL = "http://13.209.90.251";
 
@@ -8,13 +8,13 @@ export const fetchCardList = async (stationId, tagId) => {
   const pageSize = 5;
   const pageNumber = 1;
   const correctedStationId = Number(stationId) + 1;
-  
+
   // tagId가 있는 경우 추가
-  const tagParam = tagId ? `&tagId=${tagId}` : '';
+  const tagParam = tagId ? tagId : "";
 
   try {
     const response = await fetch(
-      `${BASE_URL}${endpoint}?stationId=${correctedStationId}&pageSize=${pageSize}&pageNumber=${pageNumber}${tagParam}`,
+      `${BASE_URL}${endpoint}?stationId=${correctedStationId}&pageSize=${pageSize}&pageNumber=${pageNumber}&tagId=${tagParam}`,
       {
         method: "GET",
         headers: {
@@ -29,7 +29,7 @@ export const fetchCardList = async (stationId, tagId) => {
 
     const responseData = await response.json();
     const cardList = responseData.data.posts;
-    renderWagle(stationId, cardList);
+    renderWagleList(cardList);
     closeDialog();
   } catch (error) {
     console.error("Error fetching data:", error.message);
@@ -61,15 +61,12 @@ export const fetchUploadImg = async () => {
 export const getHotStations = async () => {
   const endpoint = "/v1/station/hot";
   try {
-    const response = await fetch(
-      `${BASE_URL}${endpoint}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
+    const response = await fetch(`${BASE_URL}${endpoint}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -80,10 +77,9 @@ export const getHotStations = async () => {
   } catch (error) {
     console.error("Error fetching data: ", error.message);
   }
-}
+};
 
 export const getNearStation = async (lat, lng, target) => {
-
   const endpoint = "/v1/station/near";
   try {
     const response = await fetch(`${BASE_URL}${endpoint}?x=${lat}&y=${lng}`, {
@@ -103,11 +99,9 @@ export const getNearStation = async (lat, lng, target) => {
      */
 
     const stationId = Number(responseData.data.stationId) - 1;
-    const nearStation = target
-      .closest(".subway-line")
+    const nearStation = document
+      .querySelector(".subway-line")
       .children.namedItem(stationId);
-
-    console.log(nearStation);
 
     nearStation.scrollIntoView({ behavior: "smooth", block: "center" });
   } catch (error) {
