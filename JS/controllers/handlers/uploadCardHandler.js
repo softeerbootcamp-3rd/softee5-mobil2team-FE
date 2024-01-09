@@ -12,9 +12,23 @@ export const tagSelectHandler = (target) => {
   list.forEach((tag) => tag.classList.remove("selected-tag"));
   tagElement.classList.add("selected-tag");
   selectedTagId = tagElement.id;
-  const stationId = getStationId();
-  fetchCardList(stationId, selectedTagId);
 };
+
+export const waggleTagSelectHandler = (target) => {
+  // tagID 값만 필요하긴 한데 아래 코드를 이해하지 못해서 그냥 복붙 했습니닷..
+  const tagElement = target.closest(".tag");
+  const list = [...tagElement.parentNode.children];
+  list.forEach((tag) => tag.classList.remove("selected-tag"));
+  tagElement.classList.add("selected-tag");
+  selectedTagId = tagElement.id;
+  
+  const stationId = getStationId();
+  if(Number(selectedTagId) === 0) {
+    fetchCardList(stationId);
+  } else {
+    fetchCardList(stationId, Number(selectedTagId));
+  }
+}
 
 export const imgSelectHandler = (target) => {
   const imgElement = target.closest(".upload__photo");
