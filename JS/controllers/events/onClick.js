@@ -16,7 +16,6 @@ const clickHandlerMap = {
   "js-nearWagle": gotoNearWagle,
   "js-likePost": likePostHandler,
   "js-onCloseModal": closeDialog,
-
 };
 
 export const onClick = (event) => {
