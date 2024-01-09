@@ -23,3 +23,26 @@ export const uploadCard = async (cardData) => {
     console.error("Error fetching data:", error.message);
   }
 };
+
+export const likePost = async (postId, count) => {
+  const endpoint = "/v1/post/like";
+  const postData = {
+    postId: postId,
+    count: count
+  };
+  try {
+    const response = await fetch(`${BASE_URL}${endpoint}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(postData),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error.message);
+  }
+};
