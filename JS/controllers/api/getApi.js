@@ -3,14 +3,18 @@ import { renderHotStations, renderModal, renderWagle } from "../render.js";
 
 const BASE_URL = "http://13.209.90.251";
 
-export const fetchCardList = async (stationId) => {
+export const fetchCardList = async (stationId, tagId) => {
   const endpoint = "/v1/post/postList";
   const pageSize = 5;
   const pageNumber = 1;
   const correctedStationId = Number(stationId) + 1;
+  
+  // tagId가 있는 경우 추가
+  const tagParam = tagId ? `&tagId=${tagId}` : '';
+
   try {
     const response = await fetch(
-      `${BASE_URL}${endpoint}?stationId=${correctedStationId}&pageSize=${pageSize}&pageNumber=${pageNumber}`,
+      `${BASE_URL}${endpoint}?stationId=${correctedStationId}&pageSize=${pageSize}&pageNumber=${pageNumber}${tagParam}`,
       {
         method: "GET",
         headers: {
