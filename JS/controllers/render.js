@@ -1,3 +1,4 @@
+import { HotStationListView } from "../views/components/HotStationListView.js";
 import { UploadView } from "../views/pages/UploadView.js";
 import { WagleView } from "../views/pages/WagleView.js";
 
@@ -13,3 +14,8 @@ export const renderModal = (imageList) => {
   const modalHTML = UploadView(imageList);
   modal.innerHTML = modalHTML;
 };
+
+export const renderHotStations = (stations) => {
+  const hotHTML = HotStationListView(stations);
+  document.querySelector(".home__hot_area").innerHTML = hotHTML;
+}
