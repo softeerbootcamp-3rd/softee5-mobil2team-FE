@@ -14,8 +14,7 @@
 
 
 ## Deploy ✨
-- **FE** : [https://mobil2team-fe.vercel.app/](https://mobil2team-fe.vercel.app/)<br>
-- **BE** : [https://api.waglewagle.store/](https://api.waglewagle.store/)<br>
+- **Waglewagle Website** : [https://mobil2team-fe.vercel.app/](https://mobil2team-fe.vercel.app/)<br>
 
 <br/>
 
