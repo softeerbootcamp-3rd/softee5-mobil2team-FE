@@ -1,6 +1,8 @@
+import { tagList } from "../data.js";
 import { stationGrid } from "../data.js";
 import { WagleLinkView } from "../views/components/ButtonViews.js";
 import { HotStationListView } from "../views/components/HotStationListView.js";
+import { TagView } from "../views/components/TagView.js";
 import { WagleEmptyView } from "../views/components/wagle/WagleEmptyView.js";
 import { WagleMainView } from "../views/components/wagle/WagleMainView.js";
 import { UploadView } from "../views/pages/UploadView.js";
@@ -22,6 +24,14 @@ export const renderHotStations = (stations) => {
   const hotHTML = HotStationListView(stations);
   document.querySelector(".home__hot_area").innerHTML = hotHTML;
 };
+
+export const renderTagList = (tags) => {
+  // 전체 인덱스 제일 앞에 추가
+  tags.unshift(0);
+  const headerTag = document.querySelector(".wagle__header__tag-list");
+  headerTag.innerHTML =
+  tags.map(tagId => TagView(tagId, tagList[tagId].img, tagList[tagId].text)).join(" ");
+}
 
 export const renderPin = (stations) => {
   const subwayHTML = `
