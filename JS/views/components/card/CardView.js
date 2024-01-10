@@ -1,4 +1,4 @@
-import { tagList } from "../../data.js";
+import { tagList } from "../../../data.js";
 import { BothCardView } from "./BothCardView.js";
 import { CardFooterView } from "./CardFooterView.js";
 import { CardHeaderView } from "./CardHeaderView.js";
