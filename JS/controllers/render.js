@@ -29,9 +29,8 @@ export const renderTagList = (tags) => {
   // 전체 인덱스 제일 앞에 추가
   tags.unshift(0);
   const headerTag = document.querySelector(".wagle__header__tag-list");
-  headerTag.innerHTML =
-  tags.map(tagId => TagView(tagId, tagList[tagId].img, tagList[tagId].text)).join(" ");
-}
+  headerTag.innerHTML = tags.map((tagId) => TagView(tagId, tagList[tagId].img, tagList[tagId].text, "wagle")).join(" ");
+};
 
 export const renderPin = (stations) => {
   const subwayHTML = `
