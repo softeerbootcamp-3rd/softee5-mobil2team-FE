@@ -1,7 +1,8 @@
-import { fetchCardList, getHomeInfo, getHotStations } from "./controllers/api/getApi.js";
+import { fetchCardList, getHomeInfo, fetchTagList, getHotStations } from "./controllers/api/getApi.js";
 import { HomeView } from "./views/pages/HomeView.js";
 import { UploadView } from "./views/pages/UploadView.js";
 import { WagleView } from "./views/pages/WagleView.js";
+import { WagleLoadingView } from "./views/components/LoaderViews.js";
 
 export default (container) => {
   const home = () => {
@@ -14,6 +15,7 @@ export default (container) => {
     const { id: stationId } = params;
     container.innerHTML = WagleView(stationId);
     fetchCardList(stationId);
+    fetchTagList(Number(stationId) + 1);
   };
 
   const notFound = () => {
