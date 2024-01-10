@@ -1,7 +1,7 @@
 import { stationList } from "../../data.js";
-import { UploadHeaderView } from "../components/UploadHeaderView.js";
-import { UploadPhotoListView } from "../components/UploadPhotoListView.js";
-import { UploadTagListView } from "../components/UploadTagListView.js";
+import { UploadHeaderView } from "../components/upload/UploadHeaderView.js";
+import { UploadPhotoListView } from "../components/upload/UploadPhotoListView.js";
+import { UploadTagListView } from "../components/upload/UploadTagListView.js";
 
 export const UploadView = (imageList) => {
   /**
