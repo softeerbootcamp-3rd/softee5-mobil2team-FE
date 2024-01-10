@@ -4,11 +4,6 @@ import { UploadPhotoListView } from "../components/upload/UploadPhotoListView.js
 import { UploadTagListView } from "../components/upload/UploadTagListView.js";
 
 export const UploadView = (imageList) => {
-  /**
-   * will fix
-   * text count
-   * photo
-   */
   const { pathname } = window.location;
   const stationId = pathname.split("/")[2];
   const currStation = stationList[stationId];
