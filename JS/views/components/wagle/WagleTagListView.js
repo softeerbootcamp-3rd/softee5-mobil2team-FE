@@ -4,7 +4,7 @@ import { TagView } from "../TagView.js";
 export const WagleTagListView = () => {
   return `
     <ul class="wagle__header__tag-list">
-        ${tagList.map((tag, idx) => TagView(idx, tag.img, tag.text)).join(" ")}
+        ${tagList.map((tag, idx) => TagView(idx, tag.img, tag.text, "wagle")).join(" ")}
     </ul>
     `;
 };

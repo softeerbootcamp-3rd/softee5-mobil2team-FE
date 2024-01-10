@@ -6,9 +6,7 @@ export const UploadTagListView = () => {
   uploadTagList.shift();
   return `
 <ul class="upload__tag-list">
-    ${uploadTagList
-      .map((tag, idx) => TagView(idx, tag.img, tag.text))
-      .join(" ")}
+    ${uploadTagList.map((tag, idx) => TagView(idx, tag.img, tag.text, "upload")).join(" ")}
 </ul>
     `;
 };

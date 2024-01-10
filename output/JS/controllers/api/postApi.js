@@ -1,7 +1,7 @@
 import { getStationId } from "../utils/getStationId.js";
 import { fetchCardList } from "./getApi.js";
 
-const BASE_URL = "http://13.209.90.251";
+const BASE_URL = "https://api.waglewagle.store";
 
 export const uploadCard = async (cardData) => {
   const endpoint = "/v1/post/upload";
