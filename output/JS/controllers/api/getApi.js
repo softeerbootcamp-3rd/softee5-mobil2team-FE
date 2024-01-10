@@ -1,7 +1,7 @@
 import { closeDialog } from "../handlers/modalHandler.js";
 import { renderHotStations, renderModal, renderPin, renderTagList, renderWagleList } from "../render.js";
 
-const BASE_URL = "https://api.waglewagle.store";
+const BASE_URL = import.meta.env.BASE_URL;
 
 export const fetchCardList = async (stationId, tagId) => {
   const endpoint = "/v1/post/postList";
