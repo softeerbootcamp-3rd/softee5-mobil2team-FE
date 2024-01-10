@@ -27,8 +27,6 @@ export const WagleLinkView = (stationId, stationData) => {
       scaleValue = 1;
   }
 
-  console.log(stationId, stationData.contentCount, `scale-${scaleValue}`);
-
   return `
 <a data-navigate href="station/${stationId}"  class="subway-line__station " id="${stationId}">
   <img class="subway-line__station__pin scale-${scaleValue}" src="/pin/pin_${pinId}.svg" alt="pin" />

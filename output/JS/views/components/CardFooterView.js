@@ -1,4 +1,4 @@
-import heart from "../../../assets/heart_img.svg";
+import heart from "/heart_img.svg";
 
 export const CardFooterView = (likeCount) => {
   return `
