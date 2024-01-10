@@ -47,7 +47,7 @@ const setFormData = (form) => {
   const newFormData = new FormData(form);
 
   const stationId = getStationId();
-  newFormData.set("tagId", Number(selectedTagId));
+  newFormData.set("tagId", Number(selectedTagId) + 1);
   newFormData.set("stationId", Number(stationId) + 1); // DB index 보정
   newFormData.set("imageId", Number(selectedImgId));
 

@@ -1,5 +1,5 @@
 import { closeDialog } from "../handlers/modalHandler.js";
-import { renderHotStations, renderModal, renderWagleList } from "../render.js";
+import { renderHotStations, renderModal, renderTagList, renderWagleList } from "../render.js";
 
 const BASE_URL = "http://13.209.90.251";
 
@@ -104,6 +104,30 @@ export const getNearStation = async (lat, lng, target) => {
       .children.namedItem(stationId);
 
     nearStation.scrollIntoView({ behavior: "smooth", block: "center" });
+  } catch (error) {
+    console.error("Error fetching data: ", error.message);
+  }
+};
+
+export const fetchTagList = async (stationId) => {
+  const endpoint = "/v1/station/tag/list";
+  
+  try {
+    const response = await fetch(`${BASE_URL}${endpoint}?id=${stationId}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if(!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const responseData = await response.json();
+    const tagList = responseData.data.tags;
+    renderTagList(tagList);
+    
   } catch (error) {
     console.error("Error fetching data: ", error.message);
   }
