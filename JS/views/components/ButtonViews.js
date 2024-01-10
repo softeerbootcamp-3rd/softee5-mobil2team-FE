@@ -4,12 +4,34 @@ export const UploadLinkView = () => {
 `;
 };
 
-export const WagleLinkView = (stationId) => {
+export const WagleLinkLoaderView = (stationId) => {
   return `
-<a data-navigate href="station/${stationId}"  class="subway-line__station" id="${stationId}">
-  <img class="subway-line__station__pin" src="/pin/pin_${
-    (stationId % 11) + 1
-  }.svg" alt="pin" />
+<a data-navigate href="station/${stationId}"  class="subway-line__station" id="${stationId}"></a>
+  `;
+};
+export const WagleLinkView = (stationId, stationData) => {
+  const pinId = stationData.tagId ? stationData.tagId : "default";
+  let scaleValue;
+
+  switch (true) {
+    case stationData.contentCount >= 1000:
+      scaleValue = 4;
+      break;
+    case stationData.contentCount >= 100:
+      scaleValue = 3;
+      break;
+    case stationData.contentCount >= 10:
+      scaleValue = 2;
+      break;
+    default:
+      scaleValue = 1;
+  }
+
+  console.log(stationId, stationData.contentCount, `scale-${scaleValue}`);
+
+  return `
+<a data-navigate href="station/${stationId}"  class="subway-line__station " id="${stationId}">
+  <img class="subway-line__station__pin scale-${scaleValue}" src="/pin/pin_${pinId}.svg" alt="pin" />
 </a>
   `;
 };
