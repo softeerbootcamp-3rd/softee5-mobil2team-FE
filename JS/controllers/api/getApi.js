@@ -5,7 +5,7 @@ const BASE_URL = "https://api.waglewagle.store";
 
 export const fetchCardList = async (stationId, tagId) => {
   const endpoint = "/v1/post/postList";
-  const pageSize = 5;
+  const pageSize = 10000;
   const pageNumber = 1;
   const correctedStationId = Number(stationId) + 1;
 
@@ -108,7 +108,7 @@ export const fetchTagList = async (stationId) => {
         "Content-Type": "application/json",
       },
     });
-    if(!response.ok) {
+    if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const responseData = await response.json();
