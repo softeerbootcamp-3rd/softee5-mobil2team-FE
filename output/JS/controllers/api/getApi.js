@@ -93,7 +93,7 @@ export const getNearStation = async (lat, lng, target) => {
     const stationId = Number(responseData.data.stationId) - 1;
     const nearStation = document.querySelector(".subway-line").children.namedItem(stationId);
 
-    nearStation.scrollIntoView({ behavior: "smooth", block: "center" });
+    nearStation.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   } catch (error) {
     console.error("Error fetching data: ", error.message);
   }
