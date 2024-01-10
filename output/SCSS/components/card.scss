@@ -58,7 +58,9 @@
 .card__content--only-text {
   @extend %B_18;
   color: $gray_50;
-
+  padding: 0 15px;
+  word-break: keep-all;
+  text-align: center;
   width: 100%;
   aspect-ratio: 1 / 1;
   background-color: $gray_700;
@@ -109,10 +111,16 @@
     animation: heartAnimation 1s ease-out;
     z-index: 1;
   }
-  
+
   @keyframes heartAnimation {
-    0% { transform: translateY(0) translateX(0) scale(1); opacity: 1; }
-    100% { transform: translateY(-100px) translateX(var(--random)) scale(2); opacity: 0; }
+    0% {
+      transform: translateY(0) translateX(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px) translateX(var(--random)) scale(2);
+      opacity: 0;
+    }
   }
 
   .card__footer__like-img {
