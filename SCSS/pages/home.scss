@@ -110,6 +110,8 @@ body {
   width: 16px;
   height: 16px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
 
   &:nth-child(n + 6):nth-child(-n + 18) {
     place-self: start center;
@@ -125,7 +127,8 @@ body {
     position: absolute;
     width: 42px;
     height: 42px;
-    transform: translate(-32%, -80%);
+
+    transform: translate(0, -80%);
   }
 
   $scale-values: (
@@ -143,7 +146,6 @@ body {
         }
         50% {
           scale: $scale;
-          transform: translate(calc(-32% * $scale), -75%);
         }
         100% {
           scale: 1;
