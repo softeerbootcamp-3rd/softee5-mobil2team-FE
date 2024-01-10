@@ -146,6 +146,7 @@ body {
         }
         50% {
           scale: $scale;
+          transform: translate(0, -75%);
         }
         100% {
           scale: 1;
