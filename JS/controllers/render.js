@@ -30,8 +30,7 @@ export const renderTagList = (tags) => {
   tags.unshift(0);
   const headerTag = document.querySelector(".wagle__header__tag-list");
   headerTag.innerHTML =
-  tags.map(tagIndex => tagList[tagIndex])
-      .map((tag, idx) => TagView(idx, tag.img, tag.text)).join(" ");
+  tags.map(tagId => TagView(tagId, tagList[tagId].img, tagList[tagId].text)).join(" ");
 }
 
 export const renderPin = (stations) => {
