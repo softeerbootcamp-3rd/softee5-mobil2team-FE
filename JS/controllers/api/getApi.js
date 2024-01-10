@@ -1,7 +1,7 @@
 import { closeDialog } from "../handlers/modalHandler.js";
-import { renderHotStations, renderModal, renderTagList, renderWagleList } from "../render.js";
+import { renderHotStations, renderModal, renderPin, renderTagList, renderWagleList } from "../render.js";
 
-const BASE_URL = "http://13.209.90.251";
+const BASE_URL = "https://api.waglewagle.store";
 
 export const fetchCardList = async (stationId, tagId) => {
   const endpoint = "/v1/post/postList";
@@ -13,15 +13,12 @@ export const fetchCardList = async (stationId, tagId) => {
   const tagParam = tagId ? tagId : "";
 
   try {
-    const response = await fetch(
-      `${BASE_URL}${endpoint}?stationId=${correctedStationId}&pageSize=${pageSize}&pageNumber=${pageNumber}&tagId=${tagParam}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch(`${BASE_URL}${endpoint}?stationId=${correctedStationId}&pageSize=${pageSize}&pageNumber=${pageNumber}&tagId=${tagParam}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -93,15 +90,8 @@ export const getNearStation = async (lat, lng, target) => {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const responseData = await response.json();
-
-    /**
-     * will fix : id 받아와서 해당 위치로 화면 이동하기
-     */
-
     const stationId = Number(responseData.data.stationId) - 1;
-    const nearStation = document
-      .querySelector(".subway-line")
-      .children.namedItem(stationId);
+    const nearStation = document.querySelector(".subway-line").children.namedItem(stationId);
 
     nearStation.scrollIntoView({ behavior: "smooth", block: "center" });
   } catch (error) {
@@ -111,7 +101,6 @@ export const getNearStation = async (lat, lng, target) => {
 
 export const fetchTagList = async (stationId) => {
   const endpoint = "/v1/station/tag/list";
-  
   try {
     const response = await fetch(`${BASE_URL}${endpoint}?id=${stationId}`, {
       method: "GET",
@@ -119,15 +108,34 @@ export const fetchTagList = async (stationId) => {
         "Content-Type": "application/json",
       },
     });
-
     if(!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-
     const responseData = await response.json();
     const tagList = responseData.data.tags;
     renderTagList(tagList);
-    
+  } catch (error) {
+    console.error("Error fetching data: ", error.message);
+  }
+};
+
+export const getHomeInfo = async () => {
+  const endpoint = "/v1/station/briefInfo";
+  try {
+    const response = await fetch(`${BASE_URL}${endpoint}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const responseData = await response.json();
+    const stationList = responseData.data.stations;
+
+    renderPin(stationList);
   } catch (error) {
     console.error("Error fetching data: ", error.message);
   }

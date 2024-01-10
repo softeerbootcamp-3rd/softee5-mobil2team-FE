@@ -1,4 +1,6 @@
 import { tagList } from "../data.js";
+import { stationGrid } from "../data.js";
+import { WagleLinkView } from "../views/components/ButtonViews.js";
 import { HotStationListView } from "../views/components/HotStationListView.js";
 import { TagView } from "../views/components/TagView.js";
 import { WagleEmptyView } from "../views/components/wagle/WagleEmptyView.js";
@@ -10,8 +12,7 @@ const modal = document.querySelector(".modal");
 
 export const renderWagleList = (cardList) => {
   const wagleList = document.querySelector(".wagle__list");
-  wagleList.innerHTML =
-    cardList && cardList.length ? WagleMainView(cardList) : WagleEmptyView();
+  wagleList.innerHTML = cardList && cardList.length ? WagleMainView(cardList) : WagleEmptyView();
 };
 
 export const renderModal = (imageList) => {
@@ -32,3 +33,16 @@ export const renderTagList = (tags) => {
   tags.map(tagIndex => tagList[tagIndex])
       .map((tag, idx) => TagView(idx, tag.img, tag.text)).join(" ");
 }
+
+export const renderPin = (stations) => {
+  const subwayHTML = `
+<div name="subway" class="subway-line">
+  <div class="subway-line__empty--center"></div>
+  <div class="subway-line__empty--edge"></div>
+  <div class="subway-line__empty--edge"></div>
+  <div class="subway-line__empty--edge"></div>
+  <div class="subway-line__empty--edge"></div>
+  ${stationGrid.map((stationId) => WagleLinkView(stationId, stations[stationId])).join(" ")}
+</div>`;
+  document.querySelector(".container").innerHTML = subwayHTML;
+};
