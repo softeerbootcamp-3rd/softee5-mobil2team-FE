@@ -33,14 +33,13 @@ export const renderTagList = (tags) => {
 };
 
 export const renderPin = (stations) => {
-  const subwayHTML = `
-<div name="subway" class="subway-line">
+  const subwayLineHTML = `
   <div class="subway-line__empty--center"></div>
   <div class="subway-line__empty--edge"></div>
   <div class="subway-line__empty--edge"></div>
   <div class="subway-line__empty--edge"></div>
   <div class="subway-line__empty--edge"></div>
   ${stationGrid.map((stationId) => WagleLinkView(stationId, stations[stationId])).join(" ")}
-</div>`;
-  document.querySelector(".container").innerHTML = subwayHTML;
+`;
+  document.querySelector(".subway-line").innerHTML = subwayLineHTML;
 };
