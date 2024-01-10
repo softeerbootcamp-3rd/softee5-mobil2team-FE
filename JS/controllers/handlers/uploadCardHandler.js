@@ -45,9 +45,9 @@ export const imgSelectHandler = (target) => {
 
 const setFormData = (form) => {
   const newFormData = new FormData(form);
-
+  const correctedTagId = selectedTagId ? Number(selectedTagId) + 1 : null;
   const stationId = getStationId();
-  newFormData.set("tagId", Number(selectedTagId) + 1);
+  newFormData.set("tagId", correctedTagId);
   newFormData.set("stationId", Number(stationId) + 1); // DB index 보정
   newFormData.set("imageId", Number(selectedImgId));
 

@@ -191,13 +191,13 @@
 
 ### 우리 팀의 협업
 
-👩🏻‍💻 [모빌2팀의 그라운드 룰](https://github.com/softeerbootcamp-3nd/softee5-mobil2team-BE/blob/dev/document/ground_rule.md)
+👩🏻‍💻 [모빌2팀의 그라운드 룰](https://github.com/softeerbootcamp-3nd/softee5-mobil2team-FE/blob/dev/document/ground_rule.md)
 
 📁 [API 문서(Swagger)](http://13.209.90.251/swagger-ui/index.html)
 
-🧑‍🏫 [용어 사전](https://github.com/softeerbootcamp-3nd/softee5-mobil2team-BE/blob/dev/document/dictionary.md)
+🧑‍🏫 [용어 사전](https://github.com/softeerbootcamp-3nd/softee5-mobil2team-FE/blob/dev/document/dictionary.md)
 
-📎 [트러블 슈팅](https://github.com/softeerbootcamp-3nd/softee5-mobil2team-BE/blob/dev/document/trouble_shooting.md)
+📎 [트러블 슈팅](https://github.com/softeerbootcamp-3nd/softee5-mobil2team-FE/blob/dev/document/trouble_shooting.md)
 
 <br/>
 
