@@ -13,7 +13,7 @@ const loadingCardView = () => {
     `;
 };
 
-export const WagleLoadingView = (stationId) => {
+export const WagleLoadingView = () => {
   return `
 <main class="wagle__main  wagle__main--loading">
 ${loadingCardView()}

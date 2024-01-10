@@ -2,7 +2,6 @@ import { fetchCardList, getHomeInfo, fetchTagList, getHotStations } from "./cont
 import { HomeView } from "./views/pages/HomeView.js";
 import { UploadView } from "./views/pages/UploadView.js";
 import { WagleView } from "./views/pages/WagleView.js";
-import { WagleLoadingView } from "./views/components/LoaderViews.js";
 
 export default (container) => {
   const home = () => {

@@ -1,6 +1,6 @@
 import createRouter from "./JS/router.js";
 import createPages from "./JS/pages.js";
-import { screenSizeHandler } from "./JS/controllers/screenSizeHandler.js";
+import { screenSizeHandler } from "./JS/controllers/handlers/screenSizeHandler.js";
 import { initEventListener } from "./JS/controllers/init/initEventListener.js";
 
 import { closeDialog } from "./JS/controllers/handlers/modalHandler.js";
