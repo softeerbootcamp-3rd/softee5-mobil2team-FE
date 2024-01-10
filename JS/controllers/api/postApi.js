@@ -1,7 +1,7 @@
 import { getStationId } from "../utils/getStationId.js";
 import { fetchCardList } from "./getApi.js";
 
-const BASE_URL = "https://api.waglewagle.store";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const uploadCard = async (cardData) => {
   const endpoint = "/v1/post/upload";

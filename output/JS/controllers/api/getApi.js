@@ -1,11 +1,11 @@
 import { closeDialog } from "../handlers/modalHandler.js";
 import { renderHotStations, renderModal, renderPin, renderTagList, renderWagleList } from "../render.js";
 
-const BASE_URL = "https://api.waglewagle.store";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const fetchCardList = async (stationId, tagId) => {
   const endpoint = "/v1/post/postList";
-  const pageSize = 5;
+  const pageSize = 10000;
   const pageNumber = 1;
   const correctedStationId = Number(stationId) + 1;
 
@@ -93,7 +93,7 @@ export const getNearStation = async (lat, lng, target) => {
     const stationId = Number(responseData.data.stationId) - 1;
     const nearStation = document.querySelector(".subway-line").children.namedItem(stationId);
 
-    nearStation.scrollIntoView({ behavior: "smooth", block: "center" });
+    nearStation.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   } catch (error) {
     console.error("Error fetching data: ", error.message);
   }
@@ -108,7 +108,7 @@ export const fetchTagList = async (stationId) => {
         "Content-Type": "application/json",
       },
     });
-    if(!response.ok) {
+    if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const responseData = await response.json();
