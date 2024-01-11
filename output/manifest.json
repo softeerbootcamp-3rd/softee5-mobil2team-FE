@@ -1,6 +1,6 @@
 {
-  "name": "와글와글",
-  "short_name": "wagle",
+  "name": "와글와글 지하철",
+  "short_name": "와글와글",
   "icons": [
     {
       "src": "/icon/icon_192.png",
@@ -17,5 +17,5 @@
   "background_color": "#203A40",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": "."
+  "start_url": "./"
 }
