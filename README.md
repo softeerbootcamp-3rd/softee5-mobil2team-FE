@@ -4,7 +4,8 @@
 
 <br/>  
 
-<img width="519" alt="로고_다크" src="https://github.com/softeerbootcamp-3rd/softee5-mobil2team-FE/assets/87116017/2e4f6d87-cbe3-4135-9a1b-34f072e64f7e">
+<img width="519" alt="로고_다크" src="https://github.com/softeerbootcamp-3rd/softee5-mobil2team-FE/assets/87116017/318119f1-2af1-41d7-8455-543817e1cd17">  
+
 
 <br/>
 
