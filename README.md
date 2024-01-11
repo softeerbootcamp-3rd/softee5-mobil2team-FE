@@ -2,9 +2,9 @@
 
 <div align="center">
 
-<br/>
+<br/>  
 
-<img width="519" alt="로고_다크" src="https://github.com/softeerbootcamp-3nd/softee5-mobil2team-BE/assets/48647199/296637fd-3424-414d-b020-dd34f2ab43ea">
+<img width="519" alt="로고_다크" src="https://github.com/softeerbootcamp-3rd/softee5-mobil2team-FE/assets/87116017/2e4f6d87-cbe3-4135-9a1b-34f072e64f7e">
 
 <br/>
 
