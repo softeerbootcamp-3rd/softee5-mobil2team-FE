@@ -5,8 +5,8 @@ export const HomeView = () => {
   return `
   <header class="home__header">
     <div class="home__header__title">
-      <img src="home_header_img.svg"/>
-      <img src="home_header_title.svg"/>
+      <img alt="icon" src="home_header_img.svg"/>
+      <img alt="title" src="home_header_title.svg"/>
     </div>
     <div class="home__hot_area">
     </div>
